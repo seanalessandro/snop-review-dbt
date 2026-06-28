@@ -1,0 +1,21 @@
+# Copy to ~/.dbt/profiles.yml (or set DBT_PROFILES_DIR) and fill in credentials.
+# TRANSFORM-only: dbt connects DIRECTLY to the operational Postgres. Use a
+# dedicated read/write role: SELECT on the source schemas (logistic/export) and
+# CREATE/INSERT/UPDATE on the three output schemas it builds
+# (<schema>_staging, <schema>_intermediate, <schema>_mart).
+snopix_sff:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      dbname: snopix
+      user: dbt_user
+      password: "{{ env_var('DBT_PG_PASSWORD') }}"
+      # Output schema prefix. dbt appends the per-layer +schema (staging/intermediate/mart),
+      # so models land in dwh_staging, dwh_intermediate, dwh_mart.
+      schema: dwh
+      threads: 4
+      keepalives_idle: 0
+      sslmode: prefer

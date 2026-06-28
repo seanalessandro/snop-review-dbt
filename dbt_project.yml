@@ -1,0 +1,45 @@
+name: 'snopix_sff'
+version: '1.0.0'
+config-version: 2
+
+# This profile name must match an entry in profiles.yml (see profiles.example.yml).
+profile: 'snopix_sff'
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# --------------------------------------------------------------------------
+# Project variables
+# --------------------------------------------------------------------------
+# These point dbt at the OPERATIONAL Postgres schemas (TRANSFORM-only: dbt reads
+# the live source tables directly, no Airbyte / EL step). Override per tenant on
+# the CLI, e.g.:
+#   dbt run --vars '{src_schema: logistic_zh, export_schema: export}'
+vars:
+  src_schema: logistic       # main operational schema (Java `schema`)
+  export_schema: export      # export operational schema (Java `exportSchema`)
+  local_country_id: '120001' # FDIS plan local marker (t_fdis_marketing_d)
+  export_country_id: '120002'# FDIS plan export marker (t_fdis_export_d)
+
+# --------------------------------------------------------------------------
+# Materialization strategy per layer
+# --------------------------------------------------------------------------
+models:
+  snopix_sff:
+    staging:
+      +schema: staging          # -> <target_schema>_staging
+      +materialized: view       # thin renames/casts, no storage cost
+    intermediate:
+      +schema: intermediate     # -> <target_schema>_intermediate
+      +materialized: table       # the expensive aggregations, computed once
+    marts:
+      +schema: mart             # -> <target_schema>_mart  (API reads from here)
+      +materialized: table

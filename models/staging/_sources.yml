@@ -1,0 +1,44 @@
+version: 2
+
+# The operational Postgres schemas, read directly (TRANSFORM-only).
+# Schema names are driven by project vars so the same project serves every
+# tenant schema (logistic, logistic_zh, logistic_id, ...).
+sources:
+  - name: logistic
+    schema: "{{ var('src_schema') }}"
+    description: "Main operational schema (Java `schema`)."
+    tables:
+      # dimensions / master
+      - name: m_product
+      - name: m_division
+      - name: m_brand
+      - name: m_subbrand
+      - name: m_parent
+      - name: m_country
+      - name: m_distributor
+      - name: m_wh_dist
+      - name: m_mapping_product
+      - name: m_cycle2
+      # facts
+      - name: t_salfo_confirm_d
+      - name: t_omset
+      - name: t_fdis_actual
+      - name: t_tmp_stm
+      - name: t_tmp_stm_mt
+      - name: t_fdos_h
+      - name: t_fdos_update_d
+      - name: t_fdos_d2
+      - name: t_fdis_marketing_d
+      - name: t_fdis_update_d
+      - name: t_fdis_confirm
+      - name: t_fdis_confirm_update
+      - name: t_upload_mps
+      - name: t_stock_dist
+      - name: t_stock_wh
+
+  - name: export
+    schema: "{{ var('export_schema') }}"
+    description: "Export operational schema (Java `exportSchema`)."
+    tables:
+      - name: t_fdis_export_d
+      - name: m_country

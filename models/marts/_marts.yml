@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: mart_monitoring_sff_monthly
+    description: >
+      Pre-computed monthly monitoring SFF at (year, period, channel, pcode, ct_id)
+      grain. Replaces viewDataMonitoringMonthly(). The API aggregates this to any
+      product-hierarchy level with a simple GROUP BY.
+    columns:
+      - name: year
+        tests: [not_null]
+      - name: period
+        tests: [not_null]
+      - name: channel
+        tests:
+          - not_null
+          - accepted_values: { values: ['GT', 'MT', 'ALL'] }
+      - name: pcode
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [year, period, channel, pcode, country_id]
+
+  - name: mart_monitoring_sff_weekly
+    description: >
+      Pre-computed SNOP weekly monitoring SFF at (year, period, channel, pcode, ct_id)
+      grain, with Week-1 base metrics + W1..W5 pivots. Replaces viewDataMonitoringWeekly().
+    columns:
+      - name: channel
+        tests:
+          - not_null
+          - accepted_values: { values: ['GT', 'MT', 'ALL'] }
+      - name: pcode
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [year, period, channel, pcode, country_id]
