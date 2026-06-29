@@ -13,7 +13,7 @@
 {{ config(
     materialized = 'table',
     indexes = [
-      {'columns': ['year', 'period', 'channel', 'ct_id']},
+      {'columns': ['year', 'period', 'channel', 'country_id']},
       {'columns': ['year', 'period', 'channel', 'div_id']},
       {'columns': ['year', 'period', 'channel', 'brand_id']}
     ]

@@ -4261,3 +4261,1397 @@ drop table if exists "logistic"."dwh_intermediate"."int_stm__dbt_backup" cascade
 [0m21:56:49.416928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226484C8230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022642BDFFB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000226486B7B90>]}
 [0m21:56:49.417414 [debug] [MainThread]: Flushing usage events
 [0m21:56:51.169791 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:57:43.364908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F2BE2270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204EF14F4D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F4BE3C50>]}
+
+
+============================== 21:57:43.370112 | 0edf10ab-e9e1-42a2-8de1-b675bb1b81a7 ==============================
+[0m21:57:43.370112 [info ] [MainThread]: Running with dbt=1.11.11
+[0m21:57:43.370753 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\User\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --select staging', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'D:\\MYOR\\0Repo\\snop-review-dbt\\logs'}
+[0m21:57:43.518847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F2EFD480>]}
+[0m21:57:43.565999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F4C29F20>]}
+[0m21:57:43.566993 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m21:57:43.779120 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m21:57:43.927251 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:57:43.927563 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m21:57:43.927745 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:57:43.966631 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F4F59550>]}
+[0m21:57:44.084311 [debug] [MainThread]: Wrote artifact WritableManifest to D:\MYOR\0Repo\snop-review-dbt\target\manifest.json
+[0m21:57:44.087192 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\MYOR\0Repo\snop-review-dbt\target\semantic_manifest.json
+[0m21:57:44.102646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F644C8C0>]}
+[0m21:57:44.103039 [info ] [MainThread]: Found 46 models, 1 analysis, 10 data tests, 27 sources, 594 macros
+[0m21:57:44.103430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F4BD0E50>]}
+[0m21:57:44.105603 [info ] [MainThread]: 
+[0m21:57:44.106053 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:57:44.106428 [info ] [MainThread]: 
+[0m21:57:44.106900 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m21:57:44.110444 [debug] [ThreadPool]: Acquiring new postgres connection 'list_logistic'
+[0m21:57:44.212271 [debug] [ThreadPool]: Using postgres connection "list_logistic"
+[0m21:57:44.212605 [debug] [ThreadPool]: On list_logistic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "connection_name": "list_logistic"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m21:57:44.212813 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:57:44.594999 [debug] [ThreadPool]: SQL status: SELECT 9 in 0.382 seconds
+[0m21:57:44.596635 [debug] [ThreadPool]: On list_logistic: Close
+[0m21:57:44.600651 [debug] [ThreadPool]: Acquiring new postgres connection 'list_logistic_dwh_intermediate'
+[0m21:57:44.605123 [debug] [ThreadPool]: Using postgres connection "list_logistic_dwh_intermediate"
+[0m21:57:44.605671 [debug] [ThreadPool]: Acquiring new postgres connection 'list_logistic_dwh_staging'
+[0m21:57:44.606159 [debug] [ThreadPool]: On list_logistic_dwh_intermediate: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "connection_name": "list_logistic_dwh_intermediate"} */
+select
+      'logistic' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dwh_intermediate'
+    union all
+    select
+      'logistic' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dwh_intermediate'
+    union all
+    select
+      'logistic' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dwh_intermediate'
+  
+[0m21:57:44.608153 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:57:44.607804 [debug] [ThreadPool]: Acquiring new postgres connection 'list_logistic_dwh_mart'
+[0m21:57:44.607538 [debug] [ThreadPool]: Using postgres connection "list_logistic_dwh_staging"
+[0m21:57:44.610217 [debug] [ThreadPool]: On list_logistic_dwh_staging: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "connection_name": "list_logistic_dwh_staging"} */
+select
+      'logistic' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dwh_staging'
+    union all
+    select
+      'logistic' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dwh_staging'
+    union all
+    select
+      'logistic' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dwh_staging'
+  
+[0m21:57:44.610454 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:57:44.609903 [debug] [ThreadPool]: Using postgres connection "list_logistic_dwh_mart"
+[0m21:57:44.611138 [debug] [ThreadPool]: On list_logistic_dwh_mart: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "connection_name": "list_logistic_dwh_mart"} */
+select
+      'logistic' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dwh_mart'
+    union all
+    select
+      'logistic' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dwh_mart'
+    union all
+    select
+      'logistic' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dwh_mart'
+  
+[0m21:57:44.611466 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:57:44.992466 [debug] [ThreadPool]: SQL status: SELECT 15 in 0.384 seconds
+[0m21:57:44.993522 [debug] [ThreadPool]: SQL status: SELECT 27 in 0.383 seconds
+[0m21:57:44.996132 [debug] [ThreadPool]: On list_logistic_dwh_intermediate: ROLLBACK
+[0m21:57:44.996727 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.385 seconds
+[0m21:57:44.998804 [debug] [ThreadPool]: On list_logistic_dwh_staging: ROLLBACK
+[0m21:57:45.000741 [debug] [ThreadPool]: On list_logistic_dwh_mart: ROLLBACK
+[0m21:57:45.056561 [debug] [ThreadPool]: On list_logistic_dwh_staging: Close
+[0m21:57:45.057415 [debug] [ThreadPool]: On list_logistic_dwh_intermediate: Close
+[0m21:57:45.058123 [debug] [ThreadPool]: On list_logistic_dwh_mart: Close
+[0m21:57:45.068926 [debug] [MainThread]: Using postgres connection "master"
+[0m21:57:45.069239 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m21:57:45.069490 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:57:45.774986 [debug] [MainThread]: SQL status: SELECT 223 in 0.705 seconds
+[0m21:57:45.778478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F65BD980>]}
+[0m21:57:45.778917 [debug] [MainThread]: On master: ROLLBACK
+[0m21:57:45.820141 [debug] [MainThread]: On master: COMMIT
+[0m21:57:45.820769 [debug] [MainThread]: Using postgres connection "master"
+[0m21:57:45.821194 [debug] [MainThread]: On master: COMMIT
+[0m21:57:45.900472 [debug] [MainThread]: SQL status: COMMIT in 0.079 seconds
+[0m21:57:45.901553 [debug] [MainThread]: On master: Close
+[0m21:57:45.912432 [debug] [Thread-2 (]: Began running node model.snopix_sff.stg_m_country
+[0m21:57:45.912861 [debug] [Thread-4 (]: Began running node model.snopix_sff.stg_m_cycle2
+[0m21:57:45.913139 [debug] [Thread-1 (]: Began running node model.snopix_sff.stg_m_brand
+[0m21:57:45.914346 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_m_country_export
+[0m21:57:45.913505 [info ] [Thread-2 (]: 2 of 27 START sql view model dwh_staging.stg_m_country ......................... [RUN]
+[0m21:57:45.913980 [info ] [Thread-4 (]: 4 of 27 START sql view model dwh_staging.stg_m_cycle2 .......................... [RUN]
+[0m21:57:45.914844 [info ] [Thread-1 (]: 1 of 27 START sql view model dwh_staging.stg_m_brand ........................... [RUN]
+[0m21:57:45.915689 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.snopix_sff.stg_m_country'
+[0m21:57:45.915346 [info ] [Thread-3 (]: 3 of 27 START sql view model dwh_staging.stg_m_country_export .................. [RUN]
+[0m21:57:45.916172 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.snopix_sff.stg_m_cycle2'
+[0m21:57:45.916544 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.snopix_sff.stg_m_brand'
+[0m21:57:45.916833 [debug] [Thread-2 (]: Began compiling node model.snopix_sff.stg_m_country
+[0m21:57:45.917162 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.snopix_sff.stg_m_country_export'
+[0m21:57:45.917408 [debug] [Thread-4 (]: Began compiling node model.snopix_sff.stg_m_cycle2
+[0m21:57:45.917672 [debug] [Thread-1 (]: Began compiling node model.snopix_sff.stg_m_brand
+[0m21:57:45.923756 [debug] [Thread-2 (]: Writing injected SQL for node "model.snopix_sff.stg_m_country"
+[0m21:57:45.924176 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_m_country_export
+[0m21:57:45.925865 [debug] [Thread-4 (]: Writing injected SQL for node "model.snopix_sff.stg_m_cycle2"
+[0m21:57:45.927671 [debug] [Thread-1 (]: Writing injected SQL for node "model.snopix_sff.stg_m_brand"
+[0m21:57:45.929431 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_m_country_export"
+[0m21:57:45.930574 [debug] [Thread-2 (]: Began executing node model.snopix_sff.stg_m_country
+[0m21:57:45.931004 [debug] [Thread-4 (]: Began executing node model.snopix_sff.stg_m_cycle2
+[0m21:57:45.931333 [debug] [Thread-1 (]: Began executing node model.snopix_sff.stg_m_brand
+[0m21:57:45.950347 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_m_country_export
+[0m21:57:45.956823 [debug] [Thread-2 (]: Writing runtime sql for node "model.snopix_sff.stg_m_country"
+[0m21:57:45.959069 [debug] [Thread-4 (]: Writing runtime sql for node "model.snopix_sff.stg_m_cycle2"
+[0m21:57:45.961060 [debug] [Thread-1 (]: Writing runtime sql for node "model.snopix_sff.stg_m_brand"
+[0m21:57:45.962983 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_m_country_export"
+[0m21:57:45.964261 [debug] [Thread-2 (]: Using postgres connection "model.snopix_sff.stg_m_country"
+[0m21:57:45.964680 [debug] [Thread-2 (]: On model.snopix_sff.stg_m_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_country"} */
+
+  create view "logistic"."dwh_staging"."stg_m_country__dbt_tmp"
+    
+    
+  as (
+    -- Country master in the main (logistic) schema.
+select
+    ct_id,
+    ct_nm
+from "logistic"."logistic"."m_country"
+  );
+[0m21:57:45.965113 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:57:45.966069 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_brand"
+[0m21:57:45.966490 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_country_export"
+[0m21:57:45.965712 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_cycle2"
+[0m21:57:45.966958 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_brand: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_brand"} */
+
+  create view "logistic"."dwh_staging"."stg_m_brand__dbt_tmp"
+    
+    
+  as (
+    select
+    brand_id,
+    brand_nm
+from "logistic"."logistic"."m_brand"
+  );
+[0m21:57:45.967288 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_country_export: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_country_export"} */
+
+  create view "logistic"."dwh_staging"."stg_m_country_export__dbt_tmp"
+    
+    
+  as (
+    -- Country master in the export schema. Resolved with COALESCE(export, logistic)
+-- in int_product, mirroring COALESCE(ec.ct_id, lc.ct_id) in the Java FROM block.
+select
+    ct_id,
+    ct_nm
+from "logistic"."export"."m_country"
+  );
+[0m21:57:45.967563 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_cycle2: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_cycle2"} */
+
+  create view "logistic"."dwh_staging"."stg_m_cycle2__dbt_tmp"
+    
+    
+  as (
+    -- Period/week calendar. Drives period-week membership, the trailing 13w/5w
+-- moving-average windows, and the previous-period (upload key) lookup.
+select
+    year,
+    period,
+    week
+from "logistic"."logistic"."m_cycle2"
+  );
+[0m21:57:45.967810 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m21:57:45.968024 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:57:45.968670 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:57:46.230234 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.262 seconds
+[0m21:57:46.231623 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.266 seconds
+[0m21:57:46.238419 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_brand"
+[0m21:57:46.240456 [debug] [Thread-2 (]: Using postgres connection "model.snopix_sff.stg_m_country"
+[0m21:57:46.240797 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_brand: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_brand"} */
+alter table "logistic"."dwh_staging"."stg_m_brand" rename to "stg_m_brand__dbt_backup"
+[0m21:57:46.241118 [debug] [Thread-2 (]: On model.snopix_sff.stg_m_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_country"} */
+alter table "logistic"."dwh_staging"."stg_m_country" rename to "stg_m_country__dbt_backup"
+[0m21:57:46.254299 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.286 seconds
+[0m21:57:46.254799 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.287 seconds
+[0m21:57:46.257419 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_cycle2"
+[0m21:57:46.259496 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_country_export"
+[0m21:57:46.259796 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_cycle2: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_cycle2"} */
+alter table "logistic"."dwh_staging"."stg_m_cycle2" rename to "stg_m_cycle2__dbt_backup"
+[0m21:57:46.260077 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_country_export: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_country_export"} */
+alter table "logistic"."dwh_staging"."stg_m_country_export" rename to "stg_m_country_export__dbt_backup"
+[0m21:57:46.294047 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.052 seconds
+[0m21:57:46.294996 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.034 seconds
+[0m21:57:46.295631 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.054 seconds
+[0m21:57:46.299083 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_brand"
+[0m21:57:46.301550 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_cycle2"
+[0m21:57:46.303301 [debug] [Thread-2 (]: Using postgres connection "model.snopix_sff.stg_m_country"
+[0m21:57:46.303574 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_brand: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_brand"} */
+alter table "logistic"."dwh_staging"."stg_m_brand__dbt_tmp" rename to "stg_m_brand"
+[0m21:57:46.303866 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_cycle2: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_cycle2"} */
+alter table "logistic"."dwh_staging"."stg_m_cycle2__dbt_tmp" rename to "stg_m_cycle2"
+[0m21:57:46.304117 [debug] [Thread-2 (]: On model.snopix_sff.stg_m_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_country"} */
+alter table "logistic"."dwh_staging"."stg_m_country__dbt_tmp" rename to "stg_m_country"
+[0m21:57:46.308122 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.048 seconds
+[0m21:57:46.310602 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_country_export"
+[0m21:57:46.312809 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_country_export: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_country_export"} */
+alter table "logistic"."dwh_staging"."stg_m_country_export__dbt_tmp" rename to "stg_m_country_export"
+[0m21:57:46.349855 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.045 seconds
+[0m21:57:46.350873 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.046 seconds
+[0m21:57:46.357244 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.053 seconds
+[0m21:57:46.366553 [debug] [Thread-2 (]: On model.snopix_sff.stg_m_country: COMMIT
+[0m21:57:46.366868 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.054 seconds
+[0m21:57:46.367667 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_brand: COMMIT
+[0m21:57:46.368645 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_cycle2: COMMIT
+[0m21:57:46.368955 [debug] [Thread-2 (]: Using postgres connection "model.snopix_sff.stg_m_country"
+[0m21:57:46.369731 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_country_export: COMMIT
+[0m21:57:46.370010 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_brand"
+[0m21:57:46.370268 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_cycle2"
+[0m21:57:46.370522 [debug] [Thread-2 (]: On model.snopix_sff.stg_m_country: COMMIT
+[0m21:57:46.370775 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_country_export"
+[0m21:57:46.371010 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_brand: COMMIT
+[0m21:57:46.371237 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_cycle2: COMMIT
+[0m21:57:46.371538 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_country_export: COMMIT
+[0m21:57:46.416693 [debug] [Thread-2 (]: SQL status: COMMIT in 0.045 seconds
+[0m21:57:46.417650 [debug] [Thread-4 (]: SQL status: COMMIT in 0.046 seconds
+[0m21:57:46.418403 [debug] [Thread-1 (]: SQL status: COMMIT in 0.046 seconds
+[0m21:57:46.419077 [debug] [Thread-3 (]: SQL status: COMMIT in 0.047 seconds
+[0m21:57:46.425842 [debug] [Thread-2 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_country__dbt_backup"
+[0m21:57:46.427552 [debug] [Thread-4 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_cycle2__dbt_backup"
+[0m21:57:46.428821 [debug] [Thread-1 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_brand__dbt_backup"
+[0m21:57:46.430231 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_country_export__dbt_backup"
+[0m21:57:46.432979 [debug] [Thread-2 (]: Using postgres connection "model.snopix_sff.stg_m_country"
+[0m21:57:46.433402 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_cycle2"
+[0m21:57:46.433791 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_brand"
+[0m21:57:46.434152 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_country_export"
+[0m21:57:46.434406 [debug] [Thread-2 (]: On model.snopix_sff.stg_m_country: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_country"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_country__dbt_backup" cascade
+[0m21:57:46.434683 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_cycle2: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_cycle2"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_cycle2__dbt_backup" cascade
+[0m21:57:46.435012 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_brand: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_brand"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_brand__dbt_backup" cascade
+[0m21:57:46.435298 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_country_export: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_country_export"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_country_export__dbt_backup" cascade
+[0m21:57:46.476758 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.041 seconds
+[0m21:57:46.479028 [debug] [Thread-2 (]: On model.snopix_sff.stg_m_country: Close
+[0m21:57:46.481001 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.045 seconds
+[0m21:57:46.482131 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_cycle2: Close
+[0m21:57:46.482538 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F6453410>]}
+[0m21:57:46.483038 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F6742E60>]}
+[0m21:57:46.483584 [info ] [Thread-2 (]: 2 of 27 OK created sql view model dwh_staging.stg_m_country .................... [[32mCREATE VIEW[0m in 0.56s]
+[0m21:57:46.485237 [debug] [Thread-2 (]: Finished running node model.snopix_sff.stg_m_country
+[0m21:57:46.485853 [debug] [Thread-2 (]: Began running node model.snopix_sff.stg_m_distributor
+[0m21:57:46.484141 [info ] [Thread-4 (]: 4 of 27 OK created sql view model dwh_staging.stg_m_cycle2 ..................... [[32mCREATE VIEW[0m in 0.57s]
+[0m21:57:46.487038 [debug] [Thread-4 (]: Finished running node model.snopix_sff.stg_m_cycle2
+[0m21:57:46.486516 [info ] [Thread-2 (]: 5 of 27 START sql view model dwh_staging.stg_m_distributor ..................... [RUN]
+[0m21:57:46.487409 [debug] [Thread-4 (]: Began running node model.snopix_sff.stg_m_division
+[0m21:57:46.487762 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_country, now model.snopix_sff.stg_m_distributor)
+[0m21:57:46.488123 [info ] [Thread-4 (]: 6 of 27 START sql view model dwh_staging.stg_m_division ........................ [RUN]
+[0m21:57:46.488483 [debug] [Thread-2 (]: Began compiling node model.snopix_sff.stg_m_distributor
+[0m21:57:46.488834 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_cycle2, now model.snopix_sff.stg_m_division)
+[0m21:57:46.490570 [debug] [Thread-2 (]: Writing injected SQL for node "model.snopix_sff.stg_m_distributor"
+[0m21:57:46.490887 [debug] [Thread-4 (]: Began compiling node model.snopix_sff.stg_m_division
+[0m21:57:46.492942 [debug] [Thread-4 (]: Writing injected SQL for node "model.snopix_sff.stg_m_division"
+[0m21:57:46.493759 [debug] [Thread-2 (]: Began executing node model.snopix_sff.stg_m_distributor
+[0m21:57:46.495849 [debug] [Thread-2 (]: Writing runtime sql for node "model.snopix_sff.stg_m_distributor"
+[0m21:57:46.496410 [debug] [Thread-4 (]: Began executing node model.snopix_sff.stg_m_division
+[0m21:57:46.498707 [debug] [Thread-4 (]: Writing runtime sql for node "model.snopix_sff.stg_m_division"
+[0m21:57:46.498995 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.063 seconds
+[0m21:57:46.500269 [debug] [Thread-2 (]: Using postgres connection "model.snopix_sff.stg_m_distributor"
+[0m21:57:46.500684 [debug] [Thread-2 (]: On model.snopix_sff.stg_m_distributor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_distributor"} */
+
+  create view "logistic"."dwh_staging"."stg_m_distributor__dbt_tmp"
+    
+    
+  as (
+    -- Distributor -> channel (sls_div = 'GT' | 'MT'). Channel filter for the
+-- distributor-keyed metrics (salfo, fdos plan/upd, stock dist).
+select
+    distributor_id,
+    sls_div
+from "logistic"."logistic"."m_distributor"
+  );
+[0m21:57:46.500957 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:57:46.501424 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_brand: Close
+[0m21:57:46.502270 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_division"
+[0m21:57:46.502743 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_division: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_division"} */
+
+  create view "logistic"."dwh_staging"."stg_m_division__dbt_tmp"
+    
+    
+  as (
+    select
+    div_id,
+    div_nm
+from "logistic"."logistic"."m_division"
+  );
+[0m21:57:46.503211 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F690BB10>]}
+[0m21:57:46.503601 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:57:46.504247 [info ] [Thread-1 (]: 1 of 27 OK created sql view model dwh_staging.stg_m_brand ...................... [[32mCREATE VIEW[0m in 0.59s]
+[0m21:57:46.506177 [debug] [Thread-1 (]: Finished running node model.snopix_sff.stg_m_brand
+[0m21:57:46.507009 [debug] [Thread-1 (]: Began running node model.snopix_sff.stg_m_mapping_product
+[0m21:57:46.507511 [info ] [Thread-1 (]: 7 of 27 START sql view model dwh_staging.stg_m_mapping_product ................. [RUN]
+[0m21:57:46.508019 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_brand, now model.snopix_sff.stg_m_mapping_product)
+[0m21:57:46.508281 [debug] [Thread-1 (]: Began compiling node model.snopix_sff.stg_m_mapping_product
+[0m21:57:46.510023 [debug] [Thread-1 (]: Writing injected SQL for node "model.snopix_sff.stg_m_mapping_product"
+[0m21:57:46.511055 [debug] [Thread-1 (]: Began executing node model.snopix_sff.stg_m_mapping_product
+[0m21:57:46.513226 [debug] [Thread-1 (]: Writing runtime sql for node "model.snopix_sff.stg_m_mapping_product"
+[0m21:57:46.514270 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_mapping_product"
+[0m21:57:46.514547 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_mapping_product: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_mapping_product"} */
+
+  create view "logistic"."dwh_staging"."stg_m_mapping_product__dbt_tmp"
+    
+    
+  as (
+    -- Distributor/product whitelist applied to Stock Dist
+-- ( (sub_id, pcode) in (select distinct distributor_id, pcode from m_mapping_product) ).
+select distinct
+    distributor_id,
+    pcode
+from "logistic"."logistic"."m_mapping_product"
+  );
+[0m21:57:46.514774 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:57:46.578728 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.143 seconds
+[0m21:57:46.581069 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_country_export: Close
+[0m21:57:46.582377 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F66719D0>]}
+[0m21:57:46.583624 [info ] [Thread-3 (]: 3 of 27 OK created sql view model dwh_staging.stg_m_country_export ............. [[32mCREATE VIEW[0m in 0.67s]
+[0m21:57:46.584688 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_m_country_export
+[0m21:57:46.585835 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_m_parent
+[0m21:57:46.586531 [info ] [Thread-3 (]: 8 of 27 START sql view model dwh_staging.stg_m_parent .......................... [RUN]
+[0m21:57:46.587261 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_country_export, now model.snopix_sff.stg_m_parent)
+[0m21:57:46.587635 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_m_parent
+[0m21:57:46.589559 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_m_parent"
+[0m21:57:46.590765 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_m_parent
+[0m21:57:46.593304 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_m_parent"
+[0m21:57:46.594766 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_parent"
+[0m21:57:46.595071 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_parent: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_parent"} */
+
+  create view "logistic"."dwh_staging"."stg_m_parent__dbt_tmp"
+    
+    
+  as (
+    select
+    parent_id,
+    parent_nm
+from "logistic"."logistic"."m_parent"
+  );
+[0m21:57:46.595312 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:46.802808 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.288 seconds
+[0m21:57:46.805293 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_mapping_product"
+[0m21:57:46.805587 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_mapping_product: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_mapping_product"} */
+alter table "logistic"."dwh_staging"."stg_m_mapping_product" rename to "stg_m_mapping_product__dbt_backup"
+[0m21:57:46.833232 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.332 seconds
+[0m21:57:46.836212 [debug] [Thread-2 (]: Using postgres connection "model.snopix_sff.stg_m_distributor"
+[0m21:57:46.836592 [debug] [Thread-2 (]: On model.snopix_sff.stg_m_distributor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_distributor"} */
+alter table "logistic"."dwh_staging"."stg_m_distributor" rename to "stg_m_distributor__dbt_backup"
+[0m21:57:46.845737 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.040 seconds
+[0m21:57:46.847910 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_mapping_product"
+[0m21:57:46.848239 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_mapping_product: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_mapping_product"} */
+alter table "logistic"."dwh_staging"."stg_m_mapping_product__dbt_tmp" rename to "stg_m_mapping_product"
+[0m21:57:46.850056 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.346 seconds
+[0m21:57:46.852271 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_division"
+[0m21:57:46.852557 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_division: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_division"} */
+alter table "logistic"."dwh_staging"."stg_m_division" rename to "stg_m_division__dbt_backup"
+[0m21:57:46.853057 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.258 seconds
+[0m21:57:46.855073 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_parent"
+[0m21:57:46.855359 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_parent: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_parent"} */
+alter table "logistic"."dwh_staging"."stg_m_parent" rename to "stg_m_parent__dbt_backup"
+[0m21:57:46.888823 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.040 seconds
+[0m21:57:46.890413 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_mapping_product: COMMIT
+[0m21:57:46.890915 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_mapping_product"
+[0m21:57:46.891434 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_mapping_product: COMMIT
+[0m21:57:46.891909 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.039 seconds
+[0m21:57:46.894310 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_division"
+[0m21:57:46.894663 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_division: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_division"} */
+alter table "logistic"."dwh_staging"."stg_m_division__dbt_tmp" rename to "stg_m_division"
+[0m21:57:46.895527 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.040 seconds
+[0m21:57:46.897469 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_parent"
+[0m21:57:46.897720 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_parent: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_parent"} */
+alter table "logistic"."dwh_staging"."stg_m_parent__dbt_tmp" rename to "stg_m_parent"
+[0m21:57:46.935637 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.041 seconds
+[0m21:57:46.936250 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.038 seconds
+[0m21:57:46.936631 [debug] [Thread-1 (]: SQL status: COMMIT in 0.044 seconds
+[0m21:57:46.937973 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_division: COMMIT
+[0m21:57:46.941280 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_division"
+[0m21:57:46.939256 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_parent: COMMIT
+[0m21:57:46.941734 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_parent"
+[0m21:57:46.941004 [debug] [Thread-1 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_mapping_product__dbt_backup"
+[0m21:57:46.942306 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_mapping_product"
+[0m21:57:46.942537 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_mapping_product: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_mapping_product"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_mapping_product__dbt_backup" cascade
+[0m21:57:46.941516 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_division: COMMIT
+[0m21:57:46.941945 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_parent: COMMIT
+[0m21:57:46.986717 [debug] [Thread-4 (]: SQL status: COMMIT in 0.043 seconds
+[0m21:57:46.990904 [debug] [Thread-4 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_division__dbt_backup"
+[0m21:57:46.991750 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_division"
+[0m21:57:46.992194 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_division: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_division"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_division__dbt_backup" cascade
+[0m21:57:46.993004 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.050 seconds
+[0m21:57:46.994160 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_mapping_product: Close
+[0m21:57:46.994640 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F6906A50>]}
+[0m21:57:46.995341 [debug] [Thread-3 (]: SQL status: COMMIT in 0.052 seconds
+[0m21:57:46.996579 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_parent__dbt_backup"
+[0m21:57:46.996916 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_parent"
+[0m21:57:46.997155 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_parent: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_parent"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_parent__dbt_backup" cascade
+[0m21:57:46.995122 [info ] [Thread-1 (]: 7 of 27 OK created sql view model dwh_staging.stg_m_mapping_product ............ [[32mCREATE VIEW[0m in 0.49s]
+[0m21:57:46.998260 [debug] [Thread-1 (]: Finished running node model.snopix_sff.stg_m_mapping_product
+[0m21:57:46.998520 [debug] [Thread-1 (]: Began running node model.snopix_sff.stg_m_product
+[0m21:57:46.998809 [info ] [Thread-1 (]: 9 of 27 START sql view model dwh_staging.stg_m_product ......................... [RUN]
+[0m21:57:46.999332 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_mapping_product, now model.snopix_sff.stg_m_product)
+[0m21:57:46.999583 [debug] [Thread-1 (]: Began compiling node model.snopix_sff.stg_m_product
+[0m21:57:47.001453 [debug] [Thread-1 (]: Writing injected SQL for node "model.snopix_sff.stg_m_product"
+[0m21:57:47.002639 [debug] [Thread-1 (]: Began executing node model.snopix_sff.stg_m_product
+[0m21:57:47.004730 [debug] [Thread-1 (]: Writing runtime sql for node "model.snopix_sff.stg_m_product"
+[0m21:57:47.005706 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_product"
+[0m21:57:47.005973 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_product: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_product"} */
+
+  create view "logistic"."dwh_staging"."stg_m_product__dbt_tmp"
+    
+    
+  as (
+    -- Product master. Hierarchy keys + country marker drive every metric join.
+select
+    pcode,
+    div_id,
+    brand_id,
+    subbrand_id,
+    parent_id,
+    ct_id,
+    pcodename
+from "logistic"."logistic"."m_product"
+where div_id is not null
+  );
+[0m21:57:47.006200 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:57:47.053158 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.060 seconds
+[0m21:57:47.054154 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.057 seconds
+[0m21:57:47.055716 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_division: Close
+[0m21:57:47.056882 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_parent: Close
+[0m21:57:47.057520 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F678A030>]}
+[0m21:57:47.057955 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F6256330>]}
+[0m21:57:47.058402 [info ] [Thread-3 (]: 8 of 27 OK created sql view model dwh_staging.stg_m_parent ..................... [[32mCREATE VIEW[0m in 0.47s]
+[0m21:57:47.059412 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_m_parent
+[0m21:57:47.058866 [info ] [Thread-4 (]: 6 of 27 OK created sql view model dwh_staging.stg_m_division ................... [[32mCREATE VIEW[0m in 0.57s]
+[0m21:57:47.059762 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_m_subbrand
+[0m21:57:47.060173 [debug] [Thread-4 (]: Finished running node model.snopix_sff.stg_m_division
+[0m21:57:47.060798 [debug] [Thread-4 (]: Began running node model.snopix_sff.stg_m_wh_dist
+[0m21:57:47.060489 [info ] [Thread-3 (]: 10 of 27 START sql view model dwh_staging.stg_m_subbrand ....................... [RUN]
+[0m21:57:47.061230 [info ] [Thread-4 (]: 11 of 27 START sql view model dwh_staging.stg_m_wh_dist ........................ [RUN]
+[0m21:57:47.061589 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_parent, now model.snopix_sff.stg_m_subbrand)
+[0m21:57:47.061887 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_division, now model.snopix_sff.stg_m_wh_dist)
+[0m21:57:47.062158 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_m_subbrand
+[0m21:57:47.062407 [debug] [Thread-4 (]: Began compiling node model.snopix_sff.stg_m_wh_dist
+[0m21:57:47.066739 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_m_subbrand"
+[0m21:57:47.069147 [debug] [Thread-4 (]: Writing injected SQL for node "model.snopix_sff.stg_m_wh_dist"
+[0m21:57:47.070732 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_m_subbrand
+[0m21:57:47.071175 [debug] [Thread-4 (]: Began executing node model.snopix_sff.stg_m_wh_dist
+[0m21:57:47.073595 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_m_subbrand"
+[0m21:57:47.075470 [debug] [Thread-4 (]: Writing runtime sql for node "model.snopix_sff.stg_m_wh_dist"
+[0m21:57:47.076654 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_wh_dist"
+[0m21:57:47.077052 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_subbrand"
+[0m21:57:47.077300 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_wh_dist: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_wh_dist"} */
+
+  create view "logistic"."dwh_staging"."stg_m_wh_dist__dbt_tmp"
+    
+    
+  as (
+    -- Warehouse <-> distributor mapping. Joined to m_distributor to derive the
+-- warehouse channel set for the warehouse-keyed metrics (sta, std, fdis upd, stock ibn).
+select
+    distributor_id,
+    wh_id
+from "logistic"."logistic"."m_wh_dist"
+where wh_id is not null and wh_id <> ''
+  );
+[0m21:57:47.077582 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_subbrand: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_subbrand"} */
+
+  create view "logistic"."dwh_staging"."stg_m_subbrand__dbt_tmp"
+    
+    
+  as (
+    -- Subbrand is keyed by (brand_id, subbrand_id) — matches the Java join
+-- p.brand_id = s.brand_id and p.subbrand_id = s.subbrand_id.
+select
+    brand_id,
+    subbrand_id,
+    subbrand_nm
+from "logistic"."logistic"."m_subbrand"
+  );
+[0m21:57:47.077869 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:57:47.078125 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:47.283423 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.277 seconds
+[0m21:57:47.288795 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_product"
+[0m21:57:47.289460 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_product: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_product"} */
+alter table "logistic"."dwh_staging"."stg_m_product" rename to "stg_m_product__dbt_backup"
+[0m21:57:47.321117 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.243 seconds
+[0m21:57:47.327230 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_wh_dist"
+[0m21:57:47.327870 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.250 seconds
+[0m21:57:47.328321 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.038 seconds
+[0m21:57:47.328691 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_wh_dist: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_wh_dist"} */
+alter table "logistic"."dwh_staging"."stg_m_wh_dist" rename to "stg_m_wh_dist__dbt_backup"
+[0m21:57:47.331277 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_subbrand"
+[0m21:57:47.332879 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_product"
+[0m21:57:47.333304 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_subbrand: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_subbrand"} */
+alter table "logistic"."dwh_staging"."stg_m_subbrand" rename to "stg_m_subbrand__dbt_backup"
+[0m21:57:47.333615 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_product: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_product"} */
+alter table "logistic"."dwh_staging"."stg_m_product__dbt_tmp" rename to "stg_m_product"
+[0m21:57:47.380155 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.047 seconds
+[0m21:57:47.381047 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.047 seconds
+[0m21:57:47.384808 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_wh_dist"
+[0m21:57:47.387667 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_subbrand"
+[0m21:57:47.388081 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.054 seconds
+[0m21:57:47.388557 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_wh_dist: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_wh_dist"} */
+alter table "logistic"."dwh_staging"."stg_m_wh_dist__dbt_tmp" rename to "stg_m_wh_dist"
+[0m21:57:47.388973 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_subbrand: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_subbrand"} */
+alter table "logistic"."dwh_staging"."stg_m_subbrand__dbt_tmp" rename to "stg_m_subbrand"
+[0m21:57:47.389863 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_product: COMMIT
+[0m21:57:47.390421 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_product"
+[0m21:57:47.390676 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_product: COMMIT
+[0m21:57:47.430764 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.040 seconds
+[0m21:57:47.432486 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_wh_dist: COMMIT
+[0m21:57:47.432931 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_wh_dist"
+[0m21:57:47.433286 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_wh_dist: COMMIT
+[0m21:57:47.437086 [debug] [Thread-1 (]: SQL status: COMMIT in 0.046 seconds
+[0m21:57:47.437571 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.047 seconds
+[0m21:57:47.439945 [debug] [Thread-1 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_product__dbt_backup"
+[0m21:57:47.441098 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_subbrand: COMMIT
+[0m21:57:47.441539 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_m_product"
+[0m21:57:47.441833 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_subbrand"
+[0m21:57:47.442117 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_product: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_product"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_product__dbt_backup" cascade
+[0m21:57:47.442383 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_subbrand: COMMIT
+[0m21:57:47.470838 [debug] [Thread-4 (]: SQL status: COMMIT in 0.037 seconds
+[0m21:57:47.473861 [debug] [Thread-4 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_wh_dist__dbt_backup"
+[0m21:57:47.474540 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_m_wh_dist"
+[0m21:57:47.474947 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_wh_dist: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_wh_dist"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_wh_dist__dbt_backup" cascade
+[0m21:57:47.485660 [debug] [Thread-3 (]: SQL status: COMMIT in 0.043 seconds
+[0m21:57:47.489423 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_m_subbrand__dbt_backup"
+[0m21:57:47.490175 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_m_subbrand"
+[0m21:57:47.490613 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_subbrand: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_m_subbrand"} */
+drop view if exists "logistic"."dwh_staging"."stg_m_subbrand__dbt_backup" cascade
+[0m21:57:47.491354 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.049 seconds
+[0m21:57:47.492747 [debug] [Thread-1 (]: On model.snopix_sff.stg_m_product: Close
+[0m21:57:47.493354 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F62560F0>]}
+[0m21:57:47.493895 [info ] [Thread-1 (]: 9 of 27 OK created sql view model dwh_staging.stg_m_product .................... [[32mCREATE VIEW[0m in 0.49s]
+[0m21:57:47.495062 [debug] [Thread-1 (]: Finished running node model.snopix_sff.stg_m_product
+[0m21:57:47.495365 [debug] [Thread-1 (]: Began running node model.snopix_sff.stg_t_fdis_actual
+[0m21:57:47.495667 [info ] [Thread-1 (]: 12 of 27 START sql view model dwh_staging.stg_t_fdis_actual .................... [RUN]
+[0m21:57:47.496294 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_product, now model.snopix_sff.stg_t_fdis_actual)
+[0m21:57:47.496548 [debug] [Thread-1 (]: Began compiling node model.snopix_sff.stg_t_fdis_actual
+[0m21:57:47.498422 [debug] [Thread-1 (]: Writing injected SQL for node "model.snopix_sff.stg_t_fdis_actual"
+[0m21:57:47.499536 [debug] [Thread-1 (]: Began executing node model.snopix_sff.stg_t_fdis_actual
+[0m21:57:47.502256 [debug] [Thread-1 (]: Writing runtime sql for node "model.snopix_sff.stg_t_fdis_actual"
+[0m21:57:47.503823 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_actual"
+[0m21:57:47.504238 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_actual: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_actual"} */
+
+  create view "logistic"."dwh_staging"."stg_t_fdis_actual__dbt_tmp"
+    
+    
+  as (
+    -- STD actuals. Warehouse-keyed (wh_id -> channel).
+select
+    year,
+    week,
+    wh_id,
+    pcode,
+    cast(qty_actual as numeric) as qty_actual
+from "logistic"."logistic"."t_fdis_actual"
+  );
+[0m21:57:47.504512 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:57:47.518789 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.043 seconds
+[0m21:57:47.520619 [debug] [Thread-4 (]: On model.snopix_sff.stg_m_wh_dist: Close
+[0m21:57:47.521224 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F6256030>]}
+[0m21:57:47.521667 [info ] [Thread-4 (]: 11 of 27 OK created sql view model dwh_staging.stg_m_wh_dist ................... [[32mCREATE VIEW[0m in 0.46s]
+[0m21:57:47.522345 [debug] [Thread-4 (]: Finished running node model.snopix_sff.stg_m_wh_dist
+[0m21:57:47.522653 [debug] [Thread-4 (]: Began running node model.snopix_sff.stg_t_fdis_confirm
+[0m21:57:47.522992 [info ] [Thread-4 (]: 13 of 27 START sql view model dwh_staging.stg_t_fdis_confirm ................... [RUN]
+[0m21:57:47.523499 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_wh_dist, now model.snopix_sff.stg_t_fdis_confirm)
+[0m21:57:47.523760 [debug] [Thread-4 (]: Began compiling node model.snopix_sff.stg_t_fdis_confirm
+[0m21:57:47.525709 [debug] [Thread-4 (]: Writing injected SQL for node "model.snopix_sff.stg_t_fdis_confirm"
+[0m21:57:47.526763 [debug] [Thread-4 (]: Began executing node model.snopix_sff.stg_t_fdis_confirm
+[0m21:57:47.528685 [debug] [Thread-4 (]: Writing runtime sql for node "model.snopix_sff.stg_t_fdis_confirm"
+[0m21:57:47.529746 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm"
+[0m21:57:47.530027 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_confirm: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_confirm"} */
+
+  create view "logistic"."dwh_staging"."stg_t_fdis_confirm__dbt_tmp"
+    
+    
+  as (
+    -- FDIS confirm. Channel-AGNOSTIC (no distributor/warehouse filter in Java).
+-- Keyed by upload + calendar.
+select
+    year_upload,
+    period_upload,
+    year,
+    week,
+    pcode,
+    cast(qty as numeric) as qty
+from "logistic"."logistic"."t_fdis_confirm"
+  );
+[0m21:57:47.530265 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:57:47.533581 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.042 seconds
+[0m21:57:47.555655 [debug] [Thread-3 (]: On model.snopix_sff.stg_m_subbrand: Close
+[0m21:57:47.556238 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F678BC50>]}
+[0m21:57:47.556738 [info ] [Thread-3 (]: 10 of 27 OK created sql view model dwh_staging.stg_m_subbrand .................. [[32mCREATE VIEW[0m in 0.49s]
+[0m21:57:47.557428 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_m_subbrand
+[0m21:57:47.557725 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_fdis_confirm_update
+[0m21:57:47.558135 [info ] [Thread-3 (]: 14 of 27 START sql view model dwh_staging.stg_t_fdis_confirm_update ............ [RUN]
+[0m21:57:47.558650 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_m_subbrand, now model.snopix_sff.stg_t_fdis_confirm_update)
+[0m21:57:47.558922 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_fdis_confirm_update
+[0m21:57:47.561039 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_fdis_confirm_update"
+[0m21:57:47.562119 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_fdis_confirm_update
+[0m21:57:47.564188 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_fdis_confirm_update"
+[0m21:57:47.565589 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm_update"
+[0m21:57:47.565952 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_confirm_update: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_confirm_update"} */
+
+  create view "logistic"."dwh_staging"."stg_t_fdis_confirm_update__dbt_tmp"
+    
+    
+  as (
+    -- FDIS confirm update. Per-week value = day1+..+day6. Channel-AGNOSTIC.
+-- flag_proc = 1 only. Keyed by upload + calendar.
+select
+    year_upload,
+    period_upload,
+    flag_proc,
+    year,
+    week,
+    pcode,
+    cast(day1 as numeric) as day1,
+    cast(day2 as numeric) as day2,
+    cast(day3 as numeric) as day3,
+    cast(day4 as numeric) as day4,
+    cast(day5 as numeric) as day5,
+    cast(day6 as numeric) as day6
+from "logistic"."logistic"."t_fdis_confirm_update"
+  );
+[0m21:57:47.566213 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:47.742587 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.238 seconds
+[0m21:57:47.749161 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_actual"
+[0m21:57:47.749890 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_actual: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_actual"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_actual" rename to "stg_t_fdis_actual__dbt_backup"
+[0m21:57:47.765980 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.235 seconds
+[0m21:57:47.771180 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm"
+[0m21:57:47.771724 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_confirm: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_confirm"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_confirm" rename to "stg_t_fdis_confirm__dbt_backup"
+[0m21:57:47.855163 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.105 seconds
+[0m21:57:47.859516 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_actual"
+[0m21:57:47.860019 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_actual: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_actual"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_actual__dbt_tmp" rename to "stg_t_fdis_actual"
+[0m21:57:47.927579 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.067 seconds
+[0m21:57:47.929993 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_actual: COMMIT
+[0m21:57:47.930541 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_actual"
+[0m21:57:47.930907 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_actual: COMMIT
+[0m21:57:47.928272 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.156 seconds
+[0m21:57:47.933341 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm"
+[0m21:57:47.933672 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_confirm: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_confirm"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_confirm__dbt_tmp" rename to "stg_t_fdis_confirm"
+[0m21:57:47.935435 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.369 seconds
+[0m21:57:47.937626 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm_update"
+[0m21:57:47.937893 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_confirm_update: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_confirm_update"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_confirm_update" rename to "stg_t_fdis_confirm_update__dbt_backup"
+[0m21:57:47.973034 [debug] [Thread-1 (]: SQL status: COMMIT in 0.042 seconds
+[0m21:57:47.976484 [debug] [Thread-1 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_fdis_actual__dbt_backup"
+[0m21:57:47.977609 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_actual"
+[0m21:57:47.977965 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_actual: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_actual"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_fdis_actual__dbt_backup" cascade
+[0m21:57:47.977017 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.043 seconds
+[0m21:57:47.979219 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_confirm: COMMIT
+[0m21:57:47.979541 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm"
+[0m21:57:47.979796 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_confirm: COMMIT
+[0m21:57:47.980337 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.042 seconds
+[0m21:57:47.986073 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm_update"
+[0m21:57:47.986577 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_confirm_update: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_confirm_update"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_confirm_update__dbt_tmp" rename to "stg_t_fdis_confirm_update"
+[0m21:57:48.021213 [debug] [Thread-4 (]: SQL status: COMMIT in 0.041 seconds
+[0m21:57:48.023260 [debug] [Thread-4 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_fdis_confirm__dbt_backup"
+[0m21:57:48.023707 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.037 seconds
+[0m21:57:48.024186 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm"
+[0m21:57:48.025193 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_confirm_update: COMMIT
+[0m21:57:48.025581 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_confirm: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_confirm"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_fdis_confirm__dbt_backup" cascade
+[0m21:57:48.025983 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm_update"
+[0m21:57:48.026401 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_confirm_update: COMMIT
+[0m21:57:48.033187 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.055 seconds
+[0m21:57:48.034133 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_actual: Close
+[0m21:57:48.034710 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F66C86B0>]}
+[0m21:57:48.035317 [info ] [Thread-1 (]: 12 of 27 OK created sql view model dwh_staging.stg_t_fdis_actual ............... [[32mCREATE VIEW[0m in 0.54s]
+[0m21:57:48.035957 [debug] [Thread-1 (]: Finished running node model.snopix_sff.stg_t_fdis_actual
+[0m21:57:48.036223 [debug] [Thread-1 (]: Began running node model.snopix_sff.stg_t_fdis_export_d
+[0m21:57:48.036559 [info ] [Thread-1 (]: 15 of 27 START sql view model dwh_staging.stg_t_fdis_export_d .................. [RUN]
+[0m21:57:48.036993 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_fdis_actual, now model.snopix_sff.stg_t_fdis_export_d)
+[0m21:57:48.037285 [debug] [Thread-1 (]: Began compiling node model.snopix_sff.stg_t_fdis_export_d
+[0m21:57:48.038985 [debug] [Thread-1 (]: Writing injected SQL for node "model.snopix_sff.stg_t_fdis_export_d"
+[0m21:57:48.040167 [debug] [Thread-1 (]: Began executing node model.snopix_sff.stg_t_fdis_export_d
+[0m21:57:48.042336 [debug] [Thread-1 (]: Writing runtime sql for node "model.snopix_sff.stg_t_fdis_export_d"
+[0m21:57:48.043428 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_export_d"
+[0m21:57:48.043751 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_export_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_export_d"} */
+
+  create view "logistic"."dwh_staging"."stg_t_fdis_export_d__dbt_tmp"
+    
+    
+  as (
+    -- FDIS plan EXPORT leg (ct_id = export_country_id). CRITICAL: pcode_gdp is the
+-- product key here (Java: d.pcode_gdp as pcode ... join p.pcode_gdp = p.pcode).
+-- Channel-agnostic: the export leg is always added regardless of selected channel.
+select
+    year_upload,
+    period_upload,
+    year,
+    week,
+    pcode_gdp as pcode,
+    cast(qty_adj as numeric) as qty_adj
+from "logistic"."export"."t_fdis_export_d"
+  );
+[0m21:57:48.043986 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:57:48.064877 [debug] [Thread-3 (]: SQL status: COMMIT in 0.038 seconds
+[0m21:57:48.067002 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_fdis_confirm_update__dbt_backup"
+[0m21:57:48.067593 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_confirm_update"
+[0m21:57:48.067943 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_confirm_update: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_confirm_update"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_fdis_confirm_update__dbt_backup" cascade
+[0m21:57:48.068533 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.042 seconds
+[0m21:57:48.070700 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_confirm: Close
+[0m21:57:48.071465 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F66CB770>]}
+[0m21:57:48.072074 [info ] [Thread-4 (]: 13 of 27 OK created sql view model dwh_staging.stg_t_fdis_confirm .............. [[32mCREATE VIEW[0m in 0.55s]
+[0m21:57:48.072676 [debug] [Thread-4 (]: Finished running node model.snopix_sff.stg_t_fdis_confirm
+[0m21:57:48.073079 [debug] [Thread-4 (]: Began running node model.snopix_sff.stg_t_fdis_marketing_d
+[0m21:57:48.073668 [info ] [Thread-4 (]: 16 of 27 START sql view model dwh_staging.stg_t_fdis_marketing_d ............... [RUN]
+[0m21:57:48.074418 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_fdis_confirm, now model.snopix_sff.stg_t_fdis_marketing_d)
+[0m21:57:48.074761 [debug] [Thread-4 (]: Began compiling node model.snopix_sff.stg_t_fdis_marketing_d
+[0m21:57:48.076427 [debug] [Thread-4 (]: Writing injected SQL for node "model.snopix_sff.stg_t_fdis_marketing_d"
+[0m21:57:48.077519 [debug] [Thread-4 (]: Began executing node model.snopix_sff.stg_t_fdis_marketing_d
+[0m21:57:48.079900 [debug] [Thread-4 (]: Writing runtime sql for node "model.snopix_sff.stg_t_fdis_marketing_d"
+[0m21:57:48.081435 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_marketing_d"
+[0m21:57:48.082104 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_marketing_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_marketing_d"} */
+
+  create view "logistic"."dwh_staging"."stg_t_fdis_marketing_d__dbt_tmp"
+    
+    
+  as (
+    -- FDIS plan LOCAL leg (ct_id = local_country_id). Channel via the fact's own
+-- sls_div column. Keyed by upload + calendar.
+select
+    year_upload,
+    period_upload,
+    year,
+    week,
+    pcode,
+    sls_div,
+    cast(qty_final as numeric) as qty_final
+from "logistic"."logistic"."t_fdis_marketing_d"
+  );
+[0m21:57:48.082721 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:57:48.110550 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.041 seconds
+[0m21:57:48.111826 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_confirm_update: Close
+[0m21:57:48.112518 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F66C9310>]}
+[0m21:57:48.113178 [info ] [Thread-3 (]: 14 of 27 OK created sql view model dwh_staging.stg_t_fdis_confirm_update ....... [[32mCREATE VIEW[0m in 0.55s]
+[0m21:57:48.113965 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_fdis_confirm_update
+[0m21:57:48.114281 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_fdis_update_d
+[0m21:57:48.114621 [info ] [Thread-3 (]: 17 of 27 START sql view model dwh_staging.stg_t_fdis_update_d .................. [RUN]
+[0m21:57:48.115141 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_fdis_confirm_update, now model.snopix_sff.stg_t_fdis_update_d)
+[0m21:57:48.115365 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_fdis_update_d
+[0m21:57:48.117039 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_fdis_update_d"
+[0m21:57:48.118115 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_fdis_update_d
+[0m21:57:48.121318 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_fdis_update_d"
+[0m21:57:48.123077 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_update_d"
+[0m21:57:48.123468 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_update_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_update_d"} */
+
+  create view "logistic"."dwh_staging"."stg_t_fdis_update_d__dbt_tmp"
+    
+    
+  as (
+    -- FDIS update detail. Warehouse-keyed (wh_id -> channel). Country-agnostic in
+-- Java (no ct_id in its join); at pcode grain ct_id is fixed by the product.
+select
+    year,
+    week,
+    wh_id,
+    pcode,
+    cast(fdis_finish as numeric) as fdis_finish
+from "logistic"."logistic"."t_fdis_update_d"
+  );
+[0m21:57:48.123739 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:48.300524 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.256 seconds
+[0m21:57:48.302867 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_export_d"
+[0m21:57:48.303207 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_export_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_export_d"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_export_d" rename to "stg_t_fdis_export_d__dbt_backup"
+[0m21:57:48.340520 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.258 seconds
+[0m21:57:48.342954 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_marketing_d"
+[0m21:57:48.343290 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.040 seconds
+[0m21:57:48.343533 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_marketing_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_marketing_d"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_marketing_d" rename to "stg_t_fdis_marketing_d__dbt_backup"
+[0m21:57:48.345617 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_export_d"
+[0m21:57:48.346169 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_export_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_export_d"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_export_d__dbt_tmp" rename to "stg_t_fdis_export_d"
+[0m21:57:48.359832 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.236 seconds
+[0m21:57:48.363569 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_update_d"
+[0m21:57:48.364193 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_update_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_update_d"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_update_d" rename to "stg_t_fdis_update_d__dbt_backup"
+[0m21:57:48.385088 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.039 seconds
+[0m21:57:48.387671 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_marketing_d"
+[0m21:57:48.388017 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_marketing_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_marketing_d"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_marketing_d__dbt_tmp" rename to "stg_t_fdis_marketing_d"
+[0m21:57:48.400614 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.036 seconds
+[0m21:57:48.402709 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_update_d"
+[0m21:57:48.403008 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_update_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_update_d"} */
+alter table "logistic"."dwh_staging"."stg_t_fdis_update_d__dbt_tmp" rename to "stg_t_fdis_update_d"
+[0m21:57:48.403323 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.057 seconds
+[0m21:57:48.404169 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_export_d: COMMIT
+[0m21:57:48.404427 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_export_d"
+[0m21:57:48.404645 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_export_d: COMMIT
+[0m21:57:48.434555 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.046 seconds
+[0m21:57:48.435622 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_marketing_d: COMMIT
+[0m21:57:48.435909 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_marketing_d"
+[0m21:57:48.436148 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_marketing_d: COMMIT
+[0m21:57:48.451628 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.048 seconds
+[0m21:57:48.452270 [debug] [Thread-1 (]: SQL status: COMMIT in 0.047 seconds
+[0m21:57:48.453823 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_update_d: COMMIT
+[0m21:57:48.456293 [debug] [Thread-1 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_fdis_export_d__dbt_backup"
+[0m21:57:48.456683 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_update_d"
+[0m21:57:48.457142 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_export_d"
+[0m21:57:48.457452 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_update_d: COMMIT
+[0m21:57:48.458006 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_export_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_export_d"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_fdis_export_d__dbt_backup" cascade
+[0m21:57:48.480591 [debug] [Thread-4 (]: SQL status: COMMIT in 0.044 seconds
+[0m21:57:48.482141 [debug] [Thread-4 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_fdis_marketing_d__dbt_backup"
+[0m21:57:48.482528 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_marketing_d"
+[0m21:57:48.482757 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_marketing_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_marketing_d"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_fdis_marketing_d__dbt_backup" cascade
+[0m21:57:48.499638 [debug] [Thread-3 (]: SQL status: COMMIT in 0.041 seconds
+[0m21:57:48.502176 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_fdis_update_d__dbt_backup"
+[0m21:57:48.502655 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdis_update_d"
+[0m21:57:48.502923 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_update_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdis_update_d"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_fdis_update_d__dbt_backup" cascade
+[0m21:57:48.504215 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.046 seconds
+[0m21:57:48.505135 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdis_export_d: Close
+[0m21:57:48.506476 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F66CA3F0>]}
+[0m21:57:48.507518 [info ] [Thread-1 (]: 15 of 27 OK created sql view model dwh_staging.stg_t_fdis_export_d ............. [[32mCREATE VIEW[0m in 0.47s]
+[0m21:57:48.508967 [debug] [Thread-1 (]: Finished running node model.snopix_sff.stg_t_fdis_export_d
+[0m21:57:48.509290 [debug] [Thread-1 (]: Began running node model.snopix_sff.stg_t_fdos_d2
+[0m21:57:48.509661 [info ] [Thread-1 (]: 18 of 27 START sql view model dwh_staging.stg_t_fdos_d2 ........................ [RUN]
+[0m21:57:48.510192 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_fdis_export_d, now model.snopix_sff.stg_t_fdos_d2)
+[0m21:57:48.510455 [debug] [Thread-1 (]: Began compiling node model.snopix_sff.stg_t_fdos_d2
+[0m21:57:48.512214 [debug] [Thread-1 (]: Writing injected SQL for node "model.snopix_sff.stg_t_fdos_d2"
+[0m21:57:48.513441 [debug] [Thread-1 (]: Began executing node model.snopix_sff.stg_t_fdos_d2
+[0m21:57:48.515679 [debug] [Thread-1 (]: Writing runtime sql for node "model.snopix_sff.stg_t_fdos_d2"
+[0m21:57:48.516732 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdos_d2"
+[0m21:57:48.517029 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdos_d2: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdos_d2"} */
+
+  create view "logistic"."dwh_staging"."stg_t_fdos_d2__dbt_tmp"
+    
+    
+  as (
+    -- FDOS plan weekly detail. Source for the Week-1 FDOS Plan override in the
+-- weekly view (Java fdosPlanW1blk). Keyed by upload + calendar. sub_id -> channel.
+select
+    year_upload,
+    period_upload,
+    year,
+    week,
+    pcode,
+    sub_id,
+    cast(qty_adj as numeric) as qty_adj
+from "logistic"."logistic"."t_fdos_d2"
+  );
+[0m21:57:48.517287 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:57:48.523334 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.040 seconds
+[0m21:57:48.524682 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdis_marketing_d: Close
+[0m21:57:48.525275 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F62553D0>]}
+[0m21:57:48.525812 [info ] [Thread-4 (]: 16 of 27 OK created sql view model dwh_staging.stg_t_fdis_marketing_d .......... [[32mCREATE VIEW[0m in 0.45s]
+[0m21:57:48.526475 [debug] [Thread-4 (]: Finished running node model.snopix_sff.stg_t_fdis_marketing_d
+[0m21:57:48.526778 [debug] [Thread-4 (]: Began running node model.snopix_sff.stg_t_fdos_h
+[0m21:57:48.527123 [info ] [Thread-4 (]: 19 of 27 START sql view model dwh_staging.stg_t_fdos_h ......................... [RUN]
+[0m21:57:48.527663 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_fdis_marketing_d, now model.snopix_sff.stg_t_fdos_h)
+[0m21:57:48.527911 [debug] [Thread-4 (]: Began compiling node model.snopix_sff.stg_t_fdos_h
+[0m21:57:48.529612 [debug] [Thread-4 (]: Writing injected SQL for node "model.snopix_sff.stg_t_fdos_h"
+[0m21:57:48.530675 [debug] [Thread-4 (]: Began executing node model.snopix_sff.stg_t_fdos_h
+[0m21:57:48.532975 [debug] [Thread-4 (]: Writing runtime sql for node "model.snopix_sff.stg_t_fdos_h"
+[0m21:57:48.533977 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdos_h"
+[0m21:57:48.534270 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdos_h: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdos_h"} */
+
+  create view "logistic"."dwh_staging"."stg_t_fdos_h__dbt_tmp"
+    
+    
+  as (
+    -- FDOS plan header. Period-level (no week dimension): aggregated by submit
+-- (year_upload, period_upload) + period. sub_id -> distributor channel.
+select
+    year_upload,
+    period_upload,
+    period,
+    pcode,
+    sub_id,
+    cast(qty_adj as numeric) as qty_adj
+from "logistic"."logistic"."t_fdos_h"
+  );
+[0m21:57:48.534539 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m21:57:48.541815 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.039 seconds
+[0m21:57:48.542905 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdis_update_d: Close
+[0m21:57:48.543419 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F4E7C8F0>]}
+[0m21:57:48.543950 [info ] [Thread-3 (]: 17 of 27 OK created sql view model dwh_staging.stg_t_fdis_update_d ............. [[32mCREATE VIEW[0m in 0.43s]
+[0m21:57:48.544565 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_fdis_update_d
+[0m21:57:48.544834 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_fdos_update_d
+[0m21:57:48.545201 [info ] [Thread-3 (]: 20 of 27 START sql view model dwh_staging.stg_t_fdos_update_d .................. [RUN]
+[0m21:57:48.545688 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_fdis_update_d, now model.snopix_sff.stg_t_fdos_update_d)
+[0m21:57:48.545931 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_fdos_update_d
+[0m21:57:48.547601 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_fdos_update_d"
+[0m21:57:48.548784 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_fdos_update_d
+[0m21:57:48.551546 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_fdos_update_d"
+[0m21:57:48.553100 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdos_update_d"
+[0m21:57:48.553447 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdos_update_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdos_update_d"} */
+
+  create view "logistic"."dwh_staging"."stg_t_fdos_update_d__dbt_tmp"
+    
+    
+  as (
+    -- FDOS update detail. Calendar-keyed (year, period, week) — NO upload key.
+-- distributor_id -> channel.
+select
+    year,
+    period,
+    week,
+    pcode,
+    distributor_id,
+    cast(qty_adj as numeric) as qty_adj
+from "logistic"."logistic"."t_fdos_update_d"
+  );
+[0m21:57:48.553723 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:48.774001 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.257 seconds
+[0m21:57:48.778443 [debug] [Thread-1 (]: Using postgres connection "model.snopix_sff.stg_t_fdos_d2"
+[0m21:57:48.779054 [debug] [Thread-1 (]: On model.snopix_sff.stg_t_fdos_d2: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdos_d2"} */
+alter table "logistic"."dwh_staging"."stg_t_fdos_d2" rename to "stg_t_fdos_d2__dbt_backup"
+[0m21:57:48.792585 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.258 seconds
+[0m21:57:48.797062 [debug] [Thread-4 (]: Using postgres connection "model.snopix_sff.stg_t_fdos_h"
+[0m21:57:48.797509 [debug] [Thread-4 (]: On model.snopix_sff.stg_t_fdos_h: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdos_h"} */
+alter table "logistic"."dwh_staging"."stg_t_fdos_h" rename to "stg_t_fdos_h__dbt_backup"
+[0m21:57:48.809468 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.256 seconds
+[0m21:57:48.814968 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdos_update_d"
+[0m21:57:48.815267 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdos_update_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdos_update_d"} */
+alter table "logistic"."dwh_staging"."stg_t_fdos_update_d" rename to "stg_t_fdos_update_d__dbt_backup"
+[0m21:57:48.857024 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.041 seconds
+[0m21:57:48.861663 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdos_update_d"
+[0m21:57:48.862394 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdos_update_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdos_update_d"} */
+alter table "logistic"."dwh_staging"."stg_t_fdos_update_d__dbt_tmp" rename to "stg_t_fdos_update_d"
+[0m21:57:48.896365 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.033 seconds
+[0m21:57:48.921705 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdos_update_d: COMMIT
+[0m21:57:48.922530 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdos_update_d"
+[0m21:57:48.923138 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdos_update_d: COMMIT
+[0m21:57:48.962965 [debug] [Thread-3 (]: SQL status: COMMIT in 0.039 seconds
+[0m21:57:48.967352 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_fdos_update_d__dbt_backup"
+[0m21:57:48.968225 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_fdos_update_d"
+[0m21:57:48.968720 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdos_update_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_fdos_update_d"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_fdos_update_d__dbt_backup" cascade
+[0m21:57:49.015402 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.046 seconds
+[0m21:57:49.018619 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_fdos_update_d: Close
+[0m21:57:49.019591 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F4549F10>]}
+[0m21:57:49.020415 [info ] [Thread-3 (]: 20 of 27 OK created sql view model dwh_staging.stg_t_fdos_update_d ............. [[32mCREATE VIEW[0m in 0.47s]
+[0m21:57:49.021667 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_fdos_update_d
+[0m21:57:49.022028 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_omset
+[0m21:57:49.022403 [info ] [Thread-3 (]: 21 of 27 START sql view model dwh_staging.stg_t_omset .......................... [RUN]
+[0m21:57:49.023129 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_fdos_update_d, now model.snopix_sff.stg_t_omset)
+[0m21:57:49.023452 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_omset
+[0m21:57:49.025507 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_omset"
+[0m21:57:49.026898 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_omset
+[0m21:57:49.029701 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_omset"
+[0m21:57:49.031024 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_omset"
+[0m21:57:49.031444 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_omset: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_omset"} */
+
+  create view "logistic"."dwh_staging"."stg_t_omset__dbt_tmp"
+    
+    
+  as (
+    -- STA actuals. Warehouse-keyed (wh_id -> channel).
+select
+    year,
+    week,
+    wh_id,
+    pcode,
+    cast(qty_omset as numeric) as qty_omset
+from "logistic"."logistic"."t_omset"
+  );
+[0m21:57:49.031765 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:49.369543 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.337 seconds
+[0m21:57:49.374703 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_omset"
+[0m21:57:49.375425 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_omset: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_omset"} */
+alter table "logistic"."dwh_staging"."stg_t_omset" rename to "stg_t_omset__dbt_backup"
+[0m21:57:49.428401 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.052 seconds
+[0m21:57:49.433455 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_omset"
+[0m21:57:49.434003 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_omset: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_omset"} */
+alter table "logistic"."dwh_staging"."stg_t_omset__dbt_tmp" rename to "stg_t_omset"
+[0m21:57:49.483047 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.049 seconds
+[0m21:57:49.484093 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_omset: COMMIT
+[0m21:57:49.484352 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_omset"
+[0m21:57:49.485046 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_omset: COMMIT
+[0m21:57:49.536220 [debug] [Thread-3 (]: SQL status: COMMIT in 0.050 seconds
+[0m21:57:49.540227 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_omset__dbt_backup"
+[0m21:57:49.541207 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_omset"
+[0m21:57:49.541828 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_omset: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_omset"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_omset__dbt_backup" cascade
+[0m21:57:49.601724 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.059 seconds
+[0m21:57:49.604887 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_omset: Close
+[0m21:57:49.606136 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F678AC30>]}
+[0m21:57:49.606709 [info ] [Thread-3 (]: 21 of 27 OK created sql view model dwh_staging.stg_t_omset ..................... [[32mCREATE VIEW[0m in 0.58s]
+[0m21:57:49.607256 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_omset
+[0m21:57:49.607530 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_salfo_confirm_d
+[0m21:57:49.607869 [info ] [Thread-3 (]: 22 of 27 START sql view model dwh_staging.stg_t_salfo_confirm_d ................ [RUN]
+[0m21:57:49.608386 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_omset, now model.snopix_sff.stg_t_salfo_confirm_d)
+[0m21:57:49.608616 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_salfo_confirm_d
+[0m21:57:49.610270 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_salfo_confirm_d"
+[0m21:57:49.611312 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_salfo_confirm_d
+[0m21:57:49.614787 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_salfo_confirm_d"
+[0m21:57:49.615934 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_salfo_confirm_d"
+[0m21:57:49.616397 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_salfo_confirm_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_salfo_confirm_d"} */
+
+  create view "logistic"."dwh_staging"."stg_t_salfo_confirm_d__dbt_tmp"
+    
+    
+  as (
+    -- SALFO confirmations (partitioned). Keyed by upload (year_upload, period_upload)
+-- and by calendar (year, week). sub_id -> distributor channel.
+select
+    year_upload,
+    period_upload,
+    year,
+    week,
+    pcode,
+    sub_id,
+    cast(qty as numeric) as qty
+from "logistic"."logistic"."t_salfo_confirm_d"
+  );
+[0m21:57:49.616889 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:49.888458 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.271 seconds
+[0m21:57:49.891200 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_salfo_confirm_d"
+[0m21:57:49.891531 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_salfo_confirm_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_salfo_confirm_d"} */
+alter table "logistic"."dwh_staging"."stg_t_salfo_confirm_d" rename to "stg_t_salfo_confirm_d__dbt_backup"
+[0m21:57:49.941860 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.050 seconds
+[0m21:57:49.945636 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_salfo_confirm_d"
+[0m21:57:49.946105 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_salfo_confirm_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_salfo_confirm_d"} */
+alter table "logistic"."dwh_staging"."stg_t_salfo_confirm_d__dbt_tmp" rename to "stg_t_salfo_confirm_d"
+[0m21:57:49.995075 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.048 seconds
+[0m21:57:49.997847 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_salfo_confirm_d: COMMIT
+[0m21:57:49.998665 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_salfo_confirm_d"
+[0m21:57:49.999230 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_salfo_confirm_d: COMMIT
+[0m21:57:50.045125 [debug] [Thread-3 (]: SQL status: COMMIT in 0.045 seconds
+[0m21:57:50.048921 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_salfo_confirm_d__dbt_backup"
+[0m21:57:50.049701 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_salfo_confirm_d"
+[0m21:57:50.050144 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_salfo_confirm_d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_salfo_confirm_d"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_salfo_confirm_d__dbt_backup" cascade
+[0m21:57:50.106114 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.055 seconds
+[0m21:57:50.108674 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_salfo_confirm_d: Close
+[0m21:57:50.109687 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F678BCB0>]}
+[0m21:57:50.110538 [info ] [Thread-3 (]: 22 of 27 OK created sql view model dwh_staging.stg_t_salfo_confirm_d ........... [[32mCREATE VIEW[0m in 0.50s]
+[0m21:57:50.111951 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_salfo_confirm_d
+[0m21:57:50.112431 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_stock_dist
+[0m21:57:50.112952 [info ] [Thread-3 (]: 23 of 27 START sql view model dwh_staging.stg_t_stock_dist ..................... [RUN]
+[0m21:57:50.113585 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_salfo_confirm_d, now model.snopix_sff.stg_t_stock_dist)
+[0m21:57:50.113973 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_stock_dist
+[0m21:57:50.116149 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_stock_dist"
+[0m21:57:50.117451 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_stock_dist
+[0m21:57:50.119787 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_stock_dist"
+[0m21:57:50.121198 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_dist"
+[0m21:57:50.121715 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_dist: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_stock_dist"} */
+
+  create view "logistic"."dwh_staging"."stg_t_stock_dist__dbt_tmp"
+    
+    
+  as (
+    -- Distributor stock. Anchored to the period's last loaded week. sub_id -> channel,
+-- plus the m_mapping_product whitelist.
+select
+    year,
+    period,
+    week,
+    pcode,
+    sub_id,
+    cast(qty as numeric) as qty
+from "logistic"."logistic"."t_stock_dist"
+  );
+[0m21:57:50.122006 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:50.476133 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.354 seconds
+[0m21:57:50.479274 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_dist"
+[0m21:57:50.479617 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_dist: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_stock_dist"} */
+alter table "logistic"."dwh_staging"."stg_t_stock_dist" rename to "stg_t_stock_dist__dbt_backup"
+[0m21:57:50.523803 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.043 seconds
+[0m21:57:50.528896 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_dist"
+[0m21:57:50.529534 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_dist: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_stock_dist"} */
+alter table "logistic"."dwh_staging"."stg_t_stock_dist__dbt_tmp" rename to "stg_t_stock_dist"
+[0m21:57:50.578679 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.048 seconds
+[0m21:57:50.582335 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_dist: COMMIT
+[0m21:57:50.583283 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_dist"
+[0m21:57:50.583967 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_dist: COMMIT
+[0m21:57:50.631369 [debug] [Thread-3 (]: SQL status: COMMIT in 0.047 seconds
+[0m21:57:50.636666 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_stock_dist__dbt_backup"
+[0m21:57:50.637819 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_dist"
+[0m21:57:50.638534 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_dist: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_stock_dist"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_stock_dist__dbt_backup" cascade
+[0m21:57:50.689025 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.050 seconds
+[0m21:57:50.691505 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_dist: Close
+[0m21:57:50.692576 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F645D190>]}
+[0m21:57:50.693445 [info ] [Thread-3 (]: 23 of 27 OK created sql view model dwh_staging.stg_t_stock_dist ................ [[32mCREATE VIEW[0m in 0.58s]
+[0m21:57:50.694344 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_stock_dist
+[0m21:57:50.694802 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_stock_wh
+[0m21:57:50.695294 [info ] [Thread-3 (]: 24 of 27 START sql view model dwh_staging.stg_t_stock_wh ....................... [RUN]
+[0m21:57:50.695834 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_stock_dist, now model.snopix_sff.stg_t_stock_wh)
+[0m21:57:50.696143 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_stock_wh
+[0m21:57:50.698060 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_stock_wh"
+[0m21:57:50.699267 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_stock_wh
+[0m21:57:50.701757 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_stock_wh"
+[0m21:57:50.702876 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_wh"
+[0m21:57:50.703157 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_wh: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_stock_wh"} */
+
+  create view "logistic"."dwh_staging"."stg_t_stock_wh__dbt_tmp"
+    
+    
+  as (
+    -- Warehouse (IBN) stock. Anchored to the period's last loaded week.
+-- Warehouse-keyed (wh_id -> channel).
+select
+    year,
+    period,
+    week,
+    pcode,
+    wh_id,
+    cast(qty as numeric) as qty
+from "logistic"."logistic"."t_stock_wh"
+  );
+[0m21:57:50.703381 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:50.968854 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.265 seconds
+[0m21:57:50.971066 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_wh"
+[0m21:57:50.971357 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_wh: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_stock_wh"} */
+alter table "logistic"."dwh_staging"."stg_t_stock_wh" rename to "stg_t_stock_wh__dbt_backup"
+[0m21:57:51.026668 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.055 seconds
+[0m21:57:51.030848 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_wh"
+[0m21:57:51.031412 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_wh: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_stock_wh"} */
+alter table "logistic"."dwh_staging"."stg_t_stock_wh__dbt_tmp" rename to "stg_t_stock_wh"
+[0m21:57:51.077723 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.045 seconds
+[0m21:57:51.082254 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_wh: COMMIT
+[0m21:57:51.082966 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_wh"
+[0m21:57:51.083493 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_wh: COMMIT
+[0m21:57:51.135436 [debug] [Thread-3 (]: SQL status: COMMIT in 0.051 seconds
+[0m21:57:51.138381 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_stock_wh__dbt_backup"
+[0m21:57:51.139446 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_stock_wh"
+[0m21:57:51.140086 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_wh: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_stock_wh"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_stock_wh__dbt_backup" cascade
+[0m21:57:51.189551 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.049 seconds
+[0m21:57:51.191602 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_stock_wh: Close
+[0m21:57:51.192578 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F6789C10>]}
+[0m21:57:51.193640 [info ] [Thread-3 (]: 24 of 27 OK created sql view model dwh_staging.stg_t_stock_wh .................. [[32mCREATE VIEW[0m in 0.50s]
+[0m21:57:51.194914 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_stock_wh
+[0m21:57:51.195457 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_tmp_stm
+[0m21:57:51.196063 [info ] [Thread-3 (]: 25 of 27 START sql view model dwh_staging.stg_t_tmp_stm ........................ [RUN]
+[0m21:57:51.196918 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_stock_wh, now model.snopix_sff.stg_t_tmp_stm)
+[0m21:57:51.197412 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_tmp_stm
+[0m21:57:51.199993 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_tmp_stm"
+[0m21:57:51.201226 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_tmp_stm
+[0m21:57:51.203538 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_tmp_stm"
+[0m21:57:51.204754 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm"
+[0m21:57:51.205118 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_tmp_stm"} */
+
+  create view "logistic"."dwh_staging"."stg_t_tmp_stm__dbt_tmp"
+    
+    
+  as (
+    -- STM (GT channel). CRITICAL: year/week are stored as TEXT in this table
+-- (Java joins d.year = cast(c2.year as text) and d.week = LPAD(cast(c2.week as text),2,'0')).
+-- Normalize to integer here so every downstream join uses integer year/week.
+select
+    cast(trim(year) as integer) as year,
+    cast(trim(week) as integer) as week,
+    distributor_id,
+    pcode,
+    cast(qty as numeric)        as qty,
+    'GT'::text                  as channel
+from "logistic"."logistic"."t_tmp_stm"
+  );
+[0m21:57:51.205549 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:51.479163 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.273 seconds
+[0m21:57:51.483900 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm"
+[0m21:57:51.484266 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_tmp_stm"} */
+alter table "logistic"."dwh_staging"."stg_t_tmp_stm" rename to "stg_t_tmp_stm__dbt_backup"
+[0m21:57:51.527350 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.043 seconds
+[0m21:57:51.532905 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm"
+[0m21:57:51.533255 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_tmp_stm"} */
+alter table "logistic"."dwh_staging"."stg_t_tmp_stm__dbt_tmp" rename to "stg_t_tmp_stm"
+[0m21:57:51.577114 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.043 seconds
+[0m21:57:51.579933 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm: COMMIT
+[0m21:57:51.580785 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm"
+[0m21:57:51.581392 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm: COMMIT
+[0m21:57:51.616864 [debug] [Thread-3 (]: SQL status: COMMIT in 0.035 seconds
+[0m21:57:51.622497 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_tmp_stm__dbt_backup"
+[0m21:57:51.644019 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm"
+[0m21:57:51.644359 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_tmp_stm"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_tmp_stm__dbt_backup" cascade
+[0m21:57:51.716645 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.072 seconds
+[0m21:57:51.718175 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm: Close
+[0m21:57:51.718873 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F645CE90>]}
+[0m21:57:51.719555 [info ] [Thread-3 (]: 25 of 27 OK created sql view model dwh_staging.stg_t_tmp_stm ................... [[32mCREATE VIEW[0m in 0.52s]
+[0m21:57:51.720570 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_tmp_stm
+[0m21:57:51.721020 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_tmp_stm_mt
+[0m21:57:51.721531 [info ] [Thread-3 (]: 26 of 27 START sql view model dwh_staging.stg_t_tmp_stm_mt ..................... [RUN]
+[0m21:57:51.722164 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_tmp_stm, now model.snopix_sff.stg_t_tmp_stm_mt)
+[0m21:57:51.722513 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_tmp_stm_mt
+[0m21:57:51.724594 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_tmp_stm_mt"
+[0m21:57:51.725800 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_tmp_stm_mt
+[0m21:57:51.727685 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_tmp_stm_mt"
+[0m21:57:51.728745 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm_mt"
+[0m21:57:51.729053 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm_mt: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_tmp_stm_mt"} */
+
+  create view "logistic"."dwh_staging"."stg_t_tmp_stm_mt__dbt_tmp"
+    
+    
+  as (
+    -- STM (MT channel). Same TEXT year/week normalization as stg_t_tmp_stm.
+select
+    cast(trim(year) as integer) as year,
+    cast(trim(week) as integer) as week,
+    distributor_id,
+    pcode,
+    cast(qty as numeric)        as qty,
+    'MT'::text                  as channel
+from "logistic"."logistic"."t_tmp_stm_mt"
+  );
+[0m21:57:51.729299 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:52.046169 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.317 seconds
+[0m21:57:52.048749 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm_mt"
+[0m21:57:52.049022 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm_mt: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_tmp_stm_mt"} */
+alter table "logistic"."dwh_staging"."stg_t_tmp_stm_mt" rename to "stg_t_tmp_stm_mt__dbt_backup"
+[0m21:57:52.086892 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.037 seconds
+[0m21:57:52.091057 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm_mt"
+[0m21:57:52.091561 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm_mt: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_tmp_stm_mt"} */
+alter table "logistic"."dwh_staging"."stg_t_tmp_stm_mt__dbt_tmp" rename to "stg_t_tmp_stm_mt"
+[0m21:57:52.127573 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.036 seconds
+[0m21:57:52.129339 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm_mt: COMMIT
+[0m21:57:52.129773 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm_mt"
+[0m21:57:52.130088 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm_mt: COMMIT
+[0m21:57:52.177568 [debug] [Thread-3 (]: SQL status: COMMIT in 0.047 seconds
+[0m21:57:52.180620 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_tmp_stm_mt__dbt_backup"
+[0m21:57:52.181317 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_tmp_stm_mt"
+[0m21:57:52.181699 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm_mt: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_tmp_stm_mt"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_tmp_stm_mt__dbt_backup" cascade
+[0m21:57:52.236651 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.055 seconds
+[0m21:57:52.238011 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_tmp_stm_mt: Close
+[0m21:57:52.238694 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F645CD70>]}
+[0m21:57:54.696350 [debug] [Thread-3 (]: An error was encountered while trying to send an event
+[0m21:57:54.699150 [info ] [Thread-3 (]: 26 of 27 OK created sql view model dwh_staging.stg_t_tmp_stm_mt ................ [[32mCREATE VIEW[0m in 0.52s]
+[0m21:57:54.700696 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_tmp_stm_mt
+[0m21:57:54.701695 [debug] [Thread-3 (]: Began running node model.snopix_sff.stg_t_upload_mps
+[0m21:57:54.702460 [info ] [Thread-3 (]: 27 of 27 START sql view model dwh_staging.stg_t_upload_mps ..................... [RUN]
+[0m21:57:54.703448 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.snopix_sff.stg_t_tmp_stm_mt, now model.snopix_sff.stg_t_upload_mps)
+[0m21:57:54.703974 [debug] [Thread-3 (]: Began compiling node model.snopix_sff.stg_t_upload_mps
+[0m21:57:54.706429 [debug] [Thread-3 (]: Writing injected SQL for node "model.snopix_sff.stg_t_upload_mps"
+[0m21:57:54.707732 [debug] [Thread-3 (]: Began executing node model.snopix_sff.stg_t_upload_mps
+[0m21:57:54.711368 [debug] [Thread-3 (]: Writing runtime sql for node "model.snopix_sff.stg_t_upload_mps"
+[0m21:57:54.712745 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_upload_mps"
+[0m21:57:54.713060 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_upload_mps: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_upload_mps"} */
+
+  create view "logistic"."dwh_staging"."stg_t_upload_mps__dbt_tmp"
+    
+    
+  as (
+    -- MPS uploads. Channel-AGNOSTIC. flag_proc = 1 only. Keyed by upload + calendar.
+select
+    year_upload,
+    period_upload,
+    flag_proc,
+    year,
+    week,
+    pcode,
+    cast(qty_adj as numeric) as qty_adj
+from "logistic"."logistic"."t_upload_mps"
+  );
+[0m21:57:54.713317 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:57:55.068482 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.355 seconds
+[0m21:57:55.071378 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_upload_mps"
+[0m21:57:55.071695 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_upload_mps: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_upload_mps"} */
+alter table "logistic"."dwh_staging"."stg_t_upload_mps" rename to "stg_t_upload_mps__dbt_backup"
+[0m21:57:55.107090 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.035 seconds
+[0m21:57:55.110779 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_upload_mps"
+[0m21:57:55.111403 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_upload_mps: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_upload_mps"} */
+alter table "logistic"."dwh_staging"."stg_t_upload_mps__dbt_tmp" rename to "stg_t_upload_mps"
+[0m21:57:55.178180 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.066 seconds
+[0m21:57:55.180795 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_upload_mps: COMMIT
+[0m21:57:55.181609 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_upload_mps"
+[0m21:57:55.182177 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_upload_mps: COMMIT
+[0m21:57:55.257998 [debug] [Thread-3 (]: SQL status: COMMIT in 0.075 seconds
+[0m21:57:55.261595 [debug] [Thread-3 (]: Applying DROP to: "logistic"."dwh_staging"."stg_t_upload_mps__dbt_backup"
+[0m21:57:55.262217 [debug] [Thread-3 (]: Using postgres connection "model.snopix_sff.stg_t_upload_mps"
+[0m21:57:55.262626 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_upload_mps: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "snopix_sff", "target_name": "dev", "node_id": "model.snopix_sff.stg_t_upload_mps"} */
+drop view if exists "logistic"."dwh_staging"."stg_t_upload_mps__dbt_backup" cascade
+[0m21:57:55.336133 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.073 seconds
+[0m21:57:55.339634 [debug] [Thread-3 (]: On model.snopix_sff.stg_t_upload_mps: Close
+[0m21:57:55.340691 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0edf10ab-e9e1-42a2-8de1-b675bb1b81a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204F2D39D90>]}
+[0m21:57:55.341513 [info ] [Thread-3 (]: 27 of 27 OK created sql view model dwh_staging.stg_t_upload_mps ................ [[32mCREATE VIEW[0m in 0.64s]
+[0m21:57:55.342425 [debug] [Thread-3 (]: Finished running node model.snopix_sff.stg_t_upload_mps
+[0m22:08:43.105116 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A72A02510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A6F00F4D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A74AD7D90>]}
+
+
+============================== 22:08:43.109115 | e1f20a51-4e7b-4321-a432-1eff57f75753 ==============================
+[0m22:08:43.109115 [info ] [MainThread]: Running with dbt=1.11.11
+[0m22:08:43.109610 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\User\\.dbt', 'invocation_command': 'dbt deps', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'D:\\MYOR\\0Repo\\snop-review-dbt\\logs'}
+[0m22:08:43.231374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e1f20a51-4e7b-4321-a432-1eff57f75753', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A72D4D480>]}
+[0m22:08:43.464373 [debug] [MainThread]: Set downloads directory='C:\Users\User\AppData\Local\Temp\dbt-downloads-4dmi5ftc'
+[0m22:08:43.464772 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m22:08:45.878837 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m22:08:45.879967 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m22:08:46.182601 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m22:08:46.187106 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m22:08:47.449506 [info ] [MainThread]: Installed from version 1.4.0
+[0m22:08:47.449946 [info ] [MainThread]: Up to date!
+[0m22:08:47.450555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'e1f20a51-4e7b-4321-a432-1eff57f75753', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A74BDDAE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A74BDFDF0>]}
+[0m22:08:47.453416 [debug] [MainThread]: Command `dbt deps` succeeded at 22:08:47.453256 after 4.49 seconds
+[0m22:08:47.453818 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A74BDB950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A749697C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022A749696D0>]}
+[0m22:08:47.454238 [debug] [MainThread]: Flushing usage events
+[0m22:08:48.869444 [debug] [MainThread]: An error was encountered while trying to flush usage events
