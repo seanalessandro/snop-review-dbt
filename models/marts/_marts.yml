@@ -35,3 +35,26 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns: [year, period, channel, pcode, country_id]
+
+  - name: mart_monitoring_sff_trend
+    description: >
+      Trend Analysis source: one metric value per (target period, submit period, channel,
+      pcode) in long format. Keeps EVERY submit (unlike the monthly/weekly marts which keep
+      only the latest), so the chart's multi-submit "History Submit" series is mart-backed.
+      Replaces the live scan in getTrendData(). target_year is NULL for the FDOS metric.
+    columns:
+      - name: metric
+        tests:
+          - not_null
+          - accepted_values: { values: ['SALFO', 'FDOS', 'FDIS', 'MPS', 'FDISCONF'] }
+      - name: channel
+        tests:
+          - not_null
+          - accepted_values: { values: ['GT', 'MT', 'ALL'] }
+      - name: target_period
+        tests: [not_null]
+      - name: pcode
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [metric, channel, target_year, target_period, submit_year, submit_period, pcode, ct_id]
