@@ -11,7 +11,6 @@ with src as (
         ( coalesce(day1, 0) + coalesce(day2, 0) + coalesce(day3, 0)
         + coalesce(day4, 0) + coalesce(day5, 0) + coalesce(day6, 0) ) as qty
     from {{ ref('stg_t_fdis_confirm_update') }}
-    where flag_proc = 1
 )
 select
     pw.anchor_year   as year,
