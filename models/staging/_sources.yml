@@ -30,7 +30,7 @@ sources:
       - name: t_fdos_d2
       - name: t_fdis_marketing_d
       - name: t_fdis_update_d
-      - name: t_fdis_confirm
+      - name: t_tmp_fdis_confirm
       - name: t_fdis_confirm_update
       - name: t_upload_mps
       - name: t_stock_dist
