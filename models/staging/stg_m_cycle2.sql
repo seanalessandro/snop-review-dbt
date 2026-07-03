@@ -5,3 +5,4 @@ select
     period,
     week
 from {{ source('logistic', 'm_cycle2') }}
+where flag_work = 'Y'
