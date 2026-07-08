@@ -20,5 +20,4 @@ join {{ ref('int_period_window') }} pw
     and m.period_upload = pw.prev_period
 join {{ ref('int_product') }} p on m.pcode = p.pcode
 where pw.in_period
-  and m.flag_proc = 1
 group by pw.anchor_year, pw.anchor_period, m.pcode, p.ct_id
