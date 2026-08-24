@@ -8,19 +8,16 @@ models:
         tests:
           - not_null
           - accepted_values:
-              arguments:
-                values: ['GT', 'MT']
+              values: ['GT', 'MT']
     tests:
       - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns: [pcode, divisi, year]
+          combination_of_columns: [pcode, divisi, year]
 
   - name: stg_edi_m_acc_div
     description: Valid account-to-SBU mapping used to classify FDOS as GT or MT.
     tests:
       - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns: [acc_id, div_id]
+          combination_of_columns: [acc_id, div_id]
 
   - name: stg_edi_m_distributor
     description: Distributor channel mapping restricted to GT and MT.
@@ -29,12 +26,10 @@ models:
         tests:
           - not_null
           - accepted_values:
-              arguments:
-                values: ['GT', 'MT']
+              values: ['GT', 'MT']
     tests:
       - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns: [ct_id, distributor_id]
+          combination_of_columns: [ct_id, distributor_id]
 
   - name: stg_edi_t_fdos_h
     description: Processed FDOS Plan source; final value is qty_adj.
