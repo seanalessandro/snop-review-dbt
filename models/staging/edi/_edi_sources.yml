@@ -1,0 +1,17 @@
+version: 2
+
+# Source khusus EDI. Nama source dibedakan dari source senior sehingga paket ini
+# dapat ditambahkan tanpa mengubah models/staging/_sources.yml yang sudah ada.
+sources:
+  - name: edi_logistic
+    schema: "{{ var('src_schema') }}"
+    description: Operational SnOPIX sources required only by EDI Rekap SnOPIX.
+    tables:
+      - name: m_price_divisi
+      - name: m_acc_div
+      - name: m_distributor
+      - name: t_target_subdist
+      - name: t_fdos_h
+      - name: t_fdis_confirm
+      - name: t_fdis_confirm_update
+      - name: t_stock_dist_fdos

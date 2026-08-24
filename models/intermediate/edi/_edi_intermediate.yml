@@ -1,0 +1,90 @@
+version: 2
+
+models:
+  - name: int_edi_salfo
+    description: SALFO QTY and year/channel price SALFO VALUE at the final EDI grain.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
+
+  - name: int_edi_fdos_plan
+    description: FDOS PLAN from processed qty_adj, classified by account and SBU.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
+
+  - name: int_edi_fdis_plan
+    description: Local FDIS PLAN from qty_final and source sls_div.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
+
+  - name: int_edi_fdis_confirm
+    description: Channel-agnostic FDIS CONFIRM copied to GT and MT.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
+
+  - name: int_edi_fdis_confirm_update
+    description: Processed day1-day6 FDIS CONFIRM UPDATE copied to GT and MT.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
+
+  - name: int_edi_submit_periods
+    description: Available submit-to-target period combinations.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, year_tujuan, periode_tujuan]
+
+  - name: int_edi_target
+    description: TARGET from processed subdist targets.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
+
+  - name: int_edi_calendar_metrics
+    description: FDIS UPDATE, STOCK IBN, STD, and STA from the senior monthly mart.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
+
+  - name: int_edi_stock_subdist
+    description: STOCK SUBDIST from the final week of the target period.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
+
+  - name: int_edi_stm
+    description: STM reused from the senior pre-aggregated int_stm model.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
+
+  - name: int_edi_assembled
+    description: Wide EDI metric table before product labels are attached.
+    columns:
+      - name: divisi
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['GT', 'MT']
+      - name: pcode
+        tests: [not_null]
+      - name: ct_id
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]

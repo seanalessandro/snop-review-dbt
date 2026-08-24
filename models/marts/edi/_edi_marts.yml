@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: mart_edi_rekap_snopix
+    description: >
+      Final precomputed EDI Rekap SnOPIX. Online extraction must only select and
+      filter this mart; it must never rescan operational fact tables.
+    columns:
+      - name: year_upload
+        tests: [not_null]
+      - name: period_upload
+        tests: [not_null]
+      - name: divisi
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['GT', 'MT']
+      - name: sbu
+        tests: [not_null]
+      - name: year_tujuan
+        tests: [not_null]
+      - name: periode_tujuan
+        tests: [not_null]
+      - name: pcode
+        tests: [not_null]
+      - name: sku_name
+        tests: [not_null]
+      - name: ct_id
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [year_upload, period_upload, divisi, year_tujuan, periode_tujuan, pcode, ct_id]
