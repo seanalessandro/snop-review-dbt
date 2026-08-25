@@ -2,6 +2,8 @@
 -- last calendar week (int_period_window id = 1, the currentPeriod='N' anchor),
 -- restricted to the m_mapping_product (distributor, pcode) whitelist.
 -- Grain: (year, period, channel, pcode, ct_id). channel in ('GT','MT').
+-- git_dist = goods-in-transit qty (t_stock_dist.git_qty), surfaced as git_subdist
+-- in the marts alongside stock_subdist.
 with anchor_last_week as (
     select anchor_year, anchor_period, member_year, member_week
     from {{ ref('int_period_window') }}
@@ -13,7 +15,8 @@ select
     dist.sls_div     as channel,
     sd.pcode,
     p.ct_id,
-    sum(sd.qty)      as stock_dist
+    sum(sd.qty)      as stock_dist,
+    sum(sd.git_qty)  as git_dist
 from {{ ref('stg_t_stock_dist') }} sd
 join anchor_last_week aw
     on sd.year = aw.member_year and sd.week = aw.member_week

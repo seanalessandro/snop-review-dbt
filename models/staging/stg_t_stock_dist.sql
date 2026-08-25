@@ -6,5 +6,6 @@ select
     week,
     pcode,
     sub_id,
-    cast(qty as numeric) as qty
+    cast(qty as numeric) as qty,
+    cast(git_qty as numeric) as git_qty
 from {{ source('logistic', 't_stock_dist') }}

@@ -142,14 +142,18 @@ fdis_upd_p as (
 stock_dist_p as (
     select year, period, pcode, ct_id,
         sum(stock_dist) filter (where channel = 'GT') as stock_dist_gt,
-        sum(stock_dist) filter (where channel = 'MT') as stock_dist_mt
+        sum(stock_dist) filter (where channel = 'MT') as stock_dist_mt,
+        sum(git_dist)   filter (where channel = 'GT') as git_dist_gt,
+        sum(git_dist)   filter (where channel = 'MT') as git_dist_mt
     from {{ ref('int_stock_dist') }} group by 1, 2, 3, 4
 ),
 
 stock_ibn_p as (
     select year, period, pcode, ct_id,
         sum(stock_ibn) filter (where channel = 'GT') as stock_ibn_gt,
-        sum(stock_ibn) filter (where channel = 'MT') as stock_ibn_mt
+        sum(stock_ibn) filter (where channel = 'MT') as stock_ibn_mt,
+        sum(git_ibn)   filter (where channel = 'GT') as git_ibn_gt,
+        sum(git_ibn)   filter (where channel = 'MT') as git_ibn_mt
     from {{ ref('int_stock_ibn') }} group by 1, 2, 3, 4
 )
 
@@ -277,7 +281,13 @@ select
     coalesce(stock_dist_p.stock_dist_gt, 0)   as stock_dist_gt,
     coalesce(stock_dist_p.stock_dist_mt, 0)   as stock_dist_mt,
     coalesce(stock_ibn_p.stock_ibn_gt, 0)     as stock_ibn_gt,
-    coalesce(stock_ibn_p.stock_ibn_mt, 0)     as stock_ibn_mt
+    coalesce(stock_ibn_p.stock_ibn_mt, 0)     as stock_ibn_mt,
+
+    -- GIT (goods in transit, same anchor week as the stock above)
+    coalesce(stock_dist_p.git_dist_gt, 0)     as git_dist_gt,
+    coalesce(stock_dist_p.git_dist_mt, 0)     as git_dist_mt,
+    coalesce(stock_ibn_p.git_ibn_gt, 0)       as git_ibn_gt,
+    coalesce(stock_ibn_p.git_ibn_mt, 0)       as git_ibn_mt
 
 from spine sp
 left join salfo_p      on (sp.year, sp.period, sp.pcode, sp.ct_id) = (salfo_p.year, salfo_p.period, salfo_p.pcode, salfo_p.ct_id)

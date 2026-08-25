@@ -7,7 +7,7 @@
 --   * Base display/percentage metrics are the WEEK-1 values: salfo, sta, std, stm,
 --     fdos_plan (from t_fdos_d2), fdis_plan, fdos_upd, fdis_upd, fdis_conf, fdis_conf_upd.
 --   * mps stays the MONTHLY total (Java does not override it to W1).
---   * Moving averages (avg13/avg5*) and stock stay MONTHLY.
+--   * Moving averages (avg13/avg5*), stock and GIT stay MONTHLY.
 --   * Percentages/SCD are computed on the Week-1 base, so they are Week-1 consistent.
 --   * W1..W5 pivots are exposed for the six per-week metrics.
 {{ config(
@@ -60,6 +60,8 @@ base as (
         {{ channel_pick('a.avg5stm_gt', 'a.avg5stm_mt') }}           as avg5stm,
         {{ channel_pick('a.stock_dist_gt', 'a.stock_dist_mt') }}      as stock_subdist,
         {{ channel_pick('a.stock_ibn_gt', 'a.stock_ibn_mt') }}        as stock_ibn,
+        {{ channel_pick('a.git_dist_gt', 'a.git_dist_mt') }}          as git_subdist,
+        {{ channel_pick('a.git_ibn_gt', 'a.git_ibn_mt') }}            as git_ibn,
 
         -- Per-week W1..W5 pivots
         {{ channel_pick('a.fdos_upd_w1_gt', 'a.fdos_upd_w1_mt') }}     as fdos_upd_w1,
@@ -130,6 +132,8 @@ select
     salfo_base.avg5stm,
     salfo_base.stock_subdist,
     salfo_base.stock_ibn,
+    salfo_base.git_subdist,
+    salfo_base.git_ibn,
     coalesce(wc.jml_week, 0)    as jml_week,
 
     -- W1..W5 pivots

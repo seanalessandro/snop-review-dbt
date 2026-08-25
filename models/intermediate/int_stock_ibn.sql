@@ -1,6 +1,7 @@
 -- Stock IBN (warehouse stock): warehouse-channel, anchored to the period's last
 -- calendar week (int_period_window id = 1, the currentPeriod='N' anchor).
 -- Grain: (year, period, channel, pcode, ct_id). channel in ('GT','MT').
+-- git_ibn = goods-in-transit qty (t_stock_wh.git_qty), surfaced alongside stock_ibn.
 with anchor_last_week as (
     select anchor_year, anchor_period, member_year, member_week
     from {{ ref('int_period_window') }}
@@ -12,7 +13,8 @@ select
     wc.channel,
     s.pcode,
     p.ct_id,
-    sum(s.qty)       as stock_ibn
+    sum(s.qty)       as stock_ibn,
+    sum(s.git_qty)   as git_ibn
 from {{ ref('stg_t_stock_wh') }} s
 join anchor_last_week aw
     on s.year = aw.member_year and s.week = aw.member_week

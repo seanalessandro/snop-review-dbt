@@ -56,7 +56,9 @@ base as (
         a.fdis_conf_upd                                         as fdis_conf_upd,
         a.mps                                                   as mps,
         {{ channel_pick('a.stock_dist_gt', 'a.stock_dist_mt') }} as stock_subdist,
-        {{ channel_pick('a.stock_ibn_gt', 'a.stock_ibn_mt') }}   as stock_ibn
+        {{ channel_pick('a.stock_ibn_gt', 'a.stock_ibn_mt') }}   as stock_ibn,
+        {{ channel_pick('a.git_dist_gt', 'a.git_dist_mt') }}     as git_subdist,
+        {{ channel_pick('a.git_ibn_gt', 'a.git_ibn_mt') }}       as git_ibn
 
     from {{ ref('int_sff_assembled') }} a
     cross join channels ch
@@ -99,6 +101,8 @@ select
     salfo_base.mps,
     salfo_base.stock_subdist,
     salfo_base.stock_ibn,
+    salfo_base.git_subdist,
+    salfo_base.git_ibn,
     coalesce(wc.jml_week, 0)    as jml_week,
 
     -- computed percentages + SCD (port of setComputedValues)
