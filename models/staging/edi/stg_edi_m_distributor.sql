@@ -1,9 +1,10 @@
 {{ config(materialized='view', schema='staging', tags=['edi_rekap_snopix']) }}
 
+-- stg_edi_m_distributor.sql
 select distinct
-    trim(ct_id) as ct_id,
-    trim(distributor_id) as distributor_id,
-    upper(trim(sls_div)) as divisi
+    ct_id,
+    distributor_id,
+    sls_div as divisi
 from {{ source('edi_logistic', 'm_distributor') }}
-where upper(trim(sls_div)) in ('GT', 'MT')
+where sls_div in ('GT', 'MT')
 

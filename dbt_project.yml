@@ -34,12 +34,15 @@ vars:
 # --------------------------------------------------------------------------
 models:
   snopix_sff:
+    +pre-hook: "set local lock_timeout = '30min'"  # avoid long lock waits on Postgres
     staging:
       +schema: staging          # -> <target_schema>_staging
       +materialized: view       # thin renames/casts, no storage cost
     intermediate:
       +schema: intermediate     # -> <target_schema>_intermediate
       +materialized: table       # the expensive aggregations, computed once
+      +post-hook: "analyze {{ this }}"
     marts:
       +schema: mart             # -> <target_schema>_mart  (API reads from here)
       +materialized: table
+      +post-hook: "analyze {{ this }}"

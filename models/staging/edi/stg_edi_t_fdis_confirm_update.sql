@@ -5,7 +5,7 @@ select
     period_upload,
     year,
     week,
-    trim(pcode) as pcode,
+    pcode,
     coalesce(day1, 0)
       + coalesce(day2, 0)
       + coalesce(day3, 0)

@@ -5,8 +5,8 @@ select
     period_upload,
     year,
     week,
-    trim(ct_id) as ct_id,
-    trim(pcode) as pcode,
+    ct_id,
+    pcode,
     qty
 from {{ source('edi_logistic', 't_fdis_confirm') }}
 
