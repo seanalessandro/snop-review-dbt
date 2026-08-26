@@ -14,4 +14,4 @@ sources:
       - name: t_fdos_h
       - name: t_fdis_confirm
       - name: t_fdis_confirm_update
-      - name: t_stock_dist_fdos
+      - name: t_stock_dist

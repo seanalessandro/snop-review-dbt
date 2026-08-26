@@ -8,5 +8,4 @@ select
     ct_id,
     pcode,
     qty
-from {{ source('edi_logistic', 't_stock_dist_fdos') }}
-
+from {{ source('edi_logistic', 't_stock_dist') }}
