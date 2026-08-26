@@ -6,6 +6,5 @@ select
     sub_id,
     ct_id,
     pcode,
-    amount,
-    flag_proc
+    amount
 from {{ source('edi_logistic', 't_target_subdist') }}

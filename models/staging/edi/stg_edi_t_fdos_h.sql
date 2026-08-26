@@ -1,6 +1,5 @@
 {{ config(materialized='view', schema='staging', tags=['edi_rekap_snopix']) }}
 
--- stg_edi_t_fdos_h.sql
 select
     year_upload,
     period_upload,
@@ -10,8 +9,5 @@ select
     ct_id,
     pcode,
     acc_id,
-    qty_adj,
-    flag_proc
+    qty_adj
 from {{ source('edi_logistic', 't_fdos_h') }}
-where flag_proc = 1
-
