@@ -9,4 +9,3 @@ select
     amount,
     flag_proc
 from {{ source('edi_logistic', 't_target_subdist') }}
-where flag_proc = 1
